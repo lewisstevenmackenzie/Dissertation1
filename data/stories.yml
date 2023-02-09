@@ -1,0 +1,64 @@
+stories:
+  - story: greet and subscribe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: subscribe
+      - action: newsletter_form
+      - active_loop: newsletter_form
+
+  - story: are you a bot
+    steps:
+      - intent: bot_challenge
+      - action: utter_i_am_a_bot
+
+  - story: choosing field
+    steps:
+      - intent: field
+      - action: module_form
+      - active_loop: module_form
+
+  - story: end conversation
+    steps:
+      - intent: leave
+      - action: utter_goodbye
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: chooseModule
+  - action: module_form
+  - active_loop: module_form
+  - slot_was_set:
+    - requested_slot: studyField
+  - slot_was_set:
+    - pizza_size: AI
+  - slot_was_set:
+    - pizza_size: AI
+  - slot_was_set:
+    - requested_slot: codingAbility
+  - slot_was_set:
+    - pizza_type: 5
+  - slot_was_set:
+    - pizza_type: null
+  - slot_was_set:
+    - requested_slot: codingAbility
+  - slot_was_set:
+    - pizza_type: 5
+  - slot_was_set:
+    - pizza_type: null
+  - slot_was_set:
+    - requested_slot: codingAbility
+  - slot_was_set:
+    - pizza_type: 5
+  - slot_was_set:
+    - pizza_type: 5
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slot_values
+  - intent: leave
+  - action: utter_goodbye

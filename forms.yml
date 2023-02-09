@@ -1,0 +1,23 @@
+slots:
+  studyField:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        conditions:
+          - active_loop: module_form
+            requested_slot: studyField
+  codingAbility:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        conditions:
+          - active_loop: module_form
+            requested_slot: studyField
+  module_form:
+    required_slots:
+      studyField:
+        - type: from_text
+      codingAbility:
+        - text: from_text

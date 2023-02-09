@@ -1,0 +1,64 @@
+version: "3.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - inform
+  - subscribe
+  - bot_challenge
+  - field
+  - leave
+  - chooseModule
+  - request_chooseModule_form
+entities:
+  - studyField
+  - codingAbility
+slots:
+  studyField:
+    type: text
+    influence_conversation: false
+    mappings: []
+  codingAbility:
+    type: any
+    influence_conversation: false
+    mappings: []
+forms:
+  module_form:
+    required_slots:
+      - studyField
+      - codingAbility
+responses:
+  utter_greet:
+    - text: |
+        Hello! How can I help you?
+    - text: |
+        Hi!
+  utter_ask_email:
+    - text: |
+        What is your email address?
+  utter_subscribed:
+    - text: |
+        Check your inbox at {email} in order to finish subscribing to the newsletter!
+    - text: You're all set! Check your inbox at {email} to confirm your subscription.
+  utter_i_am_a_bot:
+    - text: "I am a bot powered by Rasa."
+  utter_ask_studyField:
+    - text: "Which field of study are you interested in?"
+  utter_ask_codingAbility:
+    - text: "What level of coding ability are you?"
+  utter_goodbye:
+    - text: "I hope i was able to help you. Enjoy the rest of your day."
+  utter_submit:
+    - text: "okay, thanks!"
+  utter_slot_values:
+    - text: "I will remeber that you are wishing to study {studyField} and your coding ability is {cadingAbility}"
+actions:
+  - "..."
+  - utter_greet
+  - utter_i_am_a_bot
+  - utter_ask_studyField
+  - utter_ask_codingAbility
+  - utter_slot_values
+  - utter_goodbye
+  - validate_chooseModule_form
