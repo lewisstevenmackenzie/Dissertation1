@@ -1,9 +1,10 @@
 rules:
   - rule: activate module choice form
     steps:
-      intent: chooseModule
-      action: module_form
-      active_loop: module_form
+      - intent: chooseModule
+      - action: module_form
+      - active_loop: module_form
+
   - rule: submit module form
     condition:
       - active_loop: module_form
@@ -11,7 +12,6 @@ rules:
       - action: module_form
       - active_loop: null
       - slot_was_set:
-        - requested_slot: null
+          - requested_slot: null
       - action: utter_submit
       - action: utter_slot_values
-

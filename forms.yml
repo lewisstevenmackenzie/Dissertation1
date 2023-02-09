@@ -15,6 +15,7 @@ slots:
         conditions:
           - active_loop: module_form
             requested_slot: studyField
+forms:
   module_form:
     required_slots:
       studyField:

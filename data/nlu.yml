@@ -29,7 +29,6 @@ nlu:
 
   - intent: inform
     examples: |
-      - I'd like to study [AI] (studyField) 
-      - my  ability is about a [4] (codingAbility)
-      - i want to learn about [web development] (studyField)
-
+      - I'd like to study [AI](studyField) 
+      - my  ability is about a [4](codingAbility)
+      - i want to learn about [web development](studyField)
