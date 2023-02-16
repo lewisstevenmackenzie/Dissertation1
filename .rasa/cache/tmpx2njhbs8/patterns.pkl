@@ -1,0 +1,6 @@
+[
+  {
+    "name": "studyField",
+    "pattern": "(\\bWeb\\ Development\\b|\\bArtificial\\ Intelligence\\b|\\bAI\\b|\\bData\\ Analysis\\b)"
+  }
+]

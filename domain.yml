@@ -16,6 +16,8 @@ intents:
 entities:
   - codingAbility
   - studyField
+  - language
+
 slots:
   studyField:
     type: text
@@ -23,12 +25,21 @@ slots:
     mappings:
       - type: from_entity
         entity: studyField
+
   codingAbility:
-    type: any
+    type: text
     influence_conversation: true
     mappings:
       - type: from_entity
         entity: codingAbility
+
+  language:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: language
+
 forms:
   module_form:
     required_slots:
@@ -52,7 +63,7 @@ responses:
   utter_ask_studyField:
     - text: Which field of study are you interested in?
   utter_ask_codingAbility:
-    - text: What level of coding ability are you?
+    - text: What level of coding ability are you? (Between 1-5)
   utter_goodbye:
     - text: I hope i was able to help you. Enjoy the rest of your day.
   utter_submit:

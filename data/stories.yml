@@ -90,20 +90,20 @@ stories:
           - codingAbility: "4"
       - action: utter_slot_values
 
-    - story: interactive_story_1
-      steps:
-        - intent: greet
-        - action: utter_greet
-        - intent: chooseModule
-        - action: module_form
-        - active_loop: module_form
-        - slot_was_set:
-            - requested_slot: studyField
-        - intent: inform
-          entities:
-            - studyField: web development
-        - action: utter_ask_codingAbility
-        - intent: inform
-          entities:
-            - codingAbility: '4'
-        - action: utter_slot_values
+  - story: interactive_story_1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: chooseModule
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - intent: inform
+        entities:
+          - studyField: web development
+      - action: utter_ask_codingAbility
+      - intent: inform
+        entities:
+          - codingAbility: "4"
+      - action: utter_slot_values

@@ -1,47 +1,66 @@
 version: "3.1"
 nlu:
-- intent: greet
-  examples: |
-    - Hi
-    - Hey!
-    - Hello
-    - Good day
-    - Good morning
-    - hi
-- intent: leave
-  examples: |
-    - bye
-    - cya
-    - goodbye
-    - i'll go now
-    - thanks for everything
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you human?
-- intent: help
-  examples: |
-    - help
-    - I'm confused
-    - what is your purpose
-    - help me
-- intent: fieldQuery
-  examples: |
-    - what fields can i study?
-    - can you give be a list of fields?
-- intent: chooseModule
-  examples: |
-    - i want to study
-    - i'm interested in picking a module
-    - i want to learn
-    - module form
-- intent: inform
-  examples: |
-    - I'd like to study [AI](studyField)
-    - my ability is about a [4](codingAbility)
-    - my skill levis is [1](codingAbility))
-    - i want to learn about [web development](studyField)
-    - [web development](studyField)
-    - [4](codingAbility)
-    - [web development](studyField)
-    - [4](codingAbility)
+  - intent: greet
+    examples: |
+      - Hi
+      - Hey!
+      - Hello
+      - Good day
+      - Good morning
+      - hi
+  - intent: leave
+    examples: |
+      - bye
+      - cya
+      - goodbye
+      - i'll go now
+      - thanks for everything
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you human?
+  - intent: help
+    examples: |
+      - help
+      - I'm confused
+      - what is your purpose
+      - help me
+  - intent: fieldQuery
+    examples: |
+      - what fields can i study?
+      - can you give be a list of fields?
+  - intent: chooseModule
+    examples: |
+      - i want to study
+      - i'm interested in picking a module
+      - i want to learn
+      - module form
+  - intent: inform
+    examples: |
+      - I'd like to study [AI](studyField)
+      - my ability is about a [4](codingAbility)
+      - my skill levis is [1](codingAbility))
+      - i want to learn about [web development](studyField)
+      - [web development](studyField)
+      - [4](codingAbility)
+      - [web development](studyField)
+      - [4](codingAbility)
+
+  - lookup: studyField
+    examples: |
+      - Web Development
+      - Artificial Intelligence
+      - AI
+      - Data Analysis
+
+  - lookup: language
+    examples: |
+      - Java
+      - C
+      - C++
+      - C#
+      - Python
+      - Haskell
+      - HTML
+      - Javascript
+      - CSS
