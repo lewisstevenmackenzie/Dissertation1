@@ -23,6 +23,16 @@ stories:
       - intent: leave
       - action: utter_goodbye
 
+  - story: User wants help
+    steps:
+      - intent: help
+      - action: utter_help
+
+  - story: User wants a list of fields
+    steps:
+      - intent: fieldQuery
+      - action: utter_field_list
+
   - story: interactive_story_1
     steps:
       - intent: greet
@@ -61,3 +71,39 @@ stories:
       - action: utter_slot_values
       - intent: leave
       - action: utter_goodbye
+
+  - story: interactive_story_1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: chooseModule
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - intent: inform
+        entities:
+          - studyField: web development
+      - action: utter_ask_codingAbility
+      - intent: inform
+        entities:
+          - codingAbility: "4"
+      - action: utter_slot_values
+
+    - story: interactive_story_1
+      steps:
+        - intent: greet
+        - action: utter_greet
+        - intent: chooseModule
+        - action: module_form
+        - active_loop: module_form
+        - slot_was_set:
+            - requested_slot: studyField
+        - intent: inform
+          entities:
+            - studyField: web development
+        - action: utter_ask_codingAbility
+        - intent: inform
+          entities:
+            - codingAbility: '4'
+        - action: utter_slot_values
