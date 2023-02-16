@@ -19,12 +19,16 @@ entities:
 slots:
   studyField:
     type: text
-    influence_conversation: false
-    mappings: []
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: studyField
   codingAbility:
     type: any
-    influence_conversation: false
-    mappings: []
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: codingAbility
 forms:
   module_form:
     required_slots:
