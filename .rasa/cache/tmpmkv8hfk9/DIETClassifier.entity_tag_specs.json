@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-codingAbility",
+      "2": "I-codingAbility",
+      "3": "L-codingAbility",
+      "4": "U-codingAbility",
+      "5": "B-language",
+      "6": "I-language",
+      "7": "L-language",
+      "8": "U-language",
+      "9": "B-studyField",
+      "10": "I-studyField",
+      "11": "L-studyField",
+      "12": "U-studyField",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-codingAbility": 1,
+      "I-codingAbility": 2,
+      "L-codingAbility": 3,
+      "U-codingAbility": 4,
+      "B-language": 5,
+      "I-language": 6,
+      "L-language": 7,
+      "U-language": 8,
+      "B-studyField": 9,
+      "I-studyField": 10,
+      "L-studyField": 11,
+      "U-studyField": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

@@ -14,4 +14,4 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: utter_submit
-      - action: utter_slot_values
+      - action: action_repeat_values

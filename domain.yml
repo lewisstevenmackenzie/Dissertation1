@@ -10,6 +10,7 @@ intents:
   - greet
   - help
   - inform
+  - languageSelection
   - leave
   - request_chooseModule_form
   - subscribe
@@ -17,7 +18,6 @@ entities:
   - codingAbility
   - studyField
   - language
-
 slots:
   studyField:
     type: text
@@ -25,26 +25,24 @@ slots:
     mappings:
       - type: from_entity
         entity: studyField
-
   codingAbility:
     type: text
     influence_conversation: true
     mappings:
       - type: from_entity
         entity: codingAbility
-
   language:
     type: text
     influence_conversation: true
     mappings:
       - type: from_entity
         entity: language
-
 forms:
   module_form:
     required_slots:
       - studyField
       - codingAbility
+      - language
 responses:
   utter_greet:
     - text: |
@@ -62,26 +60,36 @@ responses:
     - text: I am a bot powered by Rasa.
   utter_ask_studyField:
     - text: Which field of study are you interested in?
+    - text: Okay, I’m here to help you. Do you have any specific field that interest you?
   utter_ask_codingAbility:
     - text: What level of coding ability are you? (Between 1-5)
+    - text: Okay, I will suggest {studyField} modules. What level of coding ability are you? (Between 1-5)
   utter_goodbye:
     - text: I hope i was able to help you. Enjoy the rest of your day.
   utter_submit:
-    - text: okay, thanks!
+    - text: okay, thanks! {codingAbility} {studyField}
   utter_slot_values:
-    - text: I will remeber that you are wishing to study {studyField} and your coding ability is {codingAbility}
+    - text: Okay, so you would like to study {studyField} and your coding ability is estimated at {codingAbility}. you would also like to learn {language}
+  utter_invalid_input:
+    - text: Your input was invalid. Please try again.
   utter_help:
     - text: I am here to help you choose a module to study.
   utter_field_list:
     - text: There are a number of fields you may study. These range from Web Development, Artificial Intelligence and Data Analysis
+  utter_ask_language:
+    - text: Do you have a preffered coding language you would like to learn?
 actions:
   - "..."
+  - action_repeat_values
   - utter_ask_codingAbility
+  - utter_ask_language
   - utter_ask_studyField
   - utter_field_list
   - utter_goodbye
   - utter_greet
   - utter_help
   - utter_i_am_a_bot
+  - utter_invalid_input
   - utter_slot_values
+  - utter_submit
   - validate_chooseModule_form

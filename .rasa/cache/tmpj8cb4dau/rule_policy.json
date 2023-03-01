@@ -1,0 +1,25 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"module_form\"}}]": "utter_submit",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"module_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]": "utter_slot_values",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"module_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_slot_values\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"chooseModule\"}}]": "module_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"chooseModule\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"chooseModule\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"chooseModule\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"field\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"utter_ask_codingAbility\"}, \"slots\": {\"studyField\": [1.0]}, \"user\": {\"entities\": [\"studyField\"], \"intent\": \"inform\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"utter_slot_values\"}, \"slots\": {\"codingAbility\": [1.0], \"studyField\": [1.0]}, \"user\": {\"entities\": [\"codingAbility\"], \"intent\": \"inform\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent restart",
+      "handling active loops and forms - module_form",
+      "predicting default action with intent back"
+    ]
+  }
+}

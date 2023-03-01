@@ -1,0 +1,14 @@
+[
+  {
+    "name": "studyField",
+    "pattern": "(\\bWeb\\ Development\\b|\\bArtificial\\ Intelligence\\b|\\bAI\\b|\\bData\\ Analysis\\b|\\bUX\\b|\\bUser\\ Experience\\b|\\bCyber\\ Securtiy\\b|\\bDatabases\\b)"
+  },
+  {
+    "name": "codingAbility",
+    "pattern": "(\\b1\\b|\\b2\\b|\\b3\\b|\\b4\\b|\\b5\\b)"
+  },
+  {
+    "name": "language",
+    "pattern": "(\\bJava\\b|\\bC\\b|\\bC\\+\\+\\b|\\bC\\#\\b|\\bPython\\b|\\bHaskell\\b|\\bHTML\\b|\\bJavascript\\b|\\bCSS\\b)"
+  }
+]

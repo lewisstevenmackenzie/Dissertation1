@@ -8,17 +8,24 @@ slots:
           - active_loop: module_form
             requested_slot: studyField
   codingAbility:
-    type: any
+    type: text
     influence_conversation: false
     mappings:
       - type: from_entity
         conditions:
           - active_loop: module_form
-            requested_slot: studyField
+            requested_slot: codingAbility
+  language:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        conditions:
+          - active_loop: module_form
+            requested_slot: language
 forms:
   module_form:
     required_slots:
-      studyField:
-        - type: from_text
-      codingAbility:
-        - text: from_text
+      - studyField
+      - codingAbility
+      - language

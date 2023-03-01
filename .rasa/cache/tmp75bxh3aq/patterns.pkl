@@ -1,0 +1,10 @@
+[
+  {
+    "name": "studyField",
+    "pattern": "(\\bWeb\\ Development\\b|\\bArtificial\\ Intelligence\\b|\\bAI\\b|\\bData\\ Analysis\\b)"
+  },
+  {
+    "name": "language",
+    "pattern": "(\\bJava\\b|\\bC\\b|\\bC\\+\\+\\b|\\bC\\#\\b|\\bPython\\b|\\bHaskell\\b|\\bHTML\\b|\\bJavascript\\b|\\bCSS\\b)"
+  }
+]
