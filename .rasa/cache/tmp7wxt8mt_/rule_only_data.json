@@ -1,0 +1,6 @@
+{
+  "rule_only_slots": [
+    "module"
+  ],
+  "rule_only_loops": []
+}

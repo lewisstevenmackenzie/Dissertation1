@@ -15,3 +15,39 @@ rules:
           - requested_slot: null
       - action: utter_submit
       - action: action_repeat_values
+
+  - rule: Form interrupted
+    condition:
+      # Condition that form is active.
+      - active_loop: module_form
+    steps:
+      - intent: fieldQuery
+      - action: utter_field_list
+        # Return to form after handling the `chitchat` intent
+      - action: module_form
+      - active_loop: module_form
+
+  - rule: out-of-scope
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
+
+  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+    steps:
+      - intent: nlu_fallback
+      - action: utter_please_rephrase
+
+  - rule: user asks for list of modules
+    steps:
+      - intent: listModules
+      - action: action_list_modules
+
+  # - rule: State what the module involves
+  #   steps:
+  #     - intent: moduleQuery
+  #       entities:
+  #         - module: Computer Systems
+  #     - slot_was_set:
+  #         - module: Computer Systems
+  #     - action: utter_module_specifications
+  #     - action: action_module_specifications

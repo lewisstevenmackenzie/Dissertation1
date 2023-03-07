@@ -14,10 +14,12 @@ intents:
   - leave
   - request_chooseModule_form
   - subscribe
+  - moduleQuery
 entities:
   - codingAbility
-  - studyField
   - language
+  - studyField
+  - module
 slots:
   studyField:
     type: text
@@ -37,6 +39,13 @@ slots:
     mappings:
       - type: from_entity
         entity: language
+  module:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: module
+
 forms:
   module_form:
     required_slots:
@@ -78,18 +87,32 @@ responses:
     - text: There are a number of fields you may study. These range from Web Development, Artificial Intelligence and Data Analysis
   utter_ask_language:
     - text: Do you have a preffered coding language you would like to learn?
+  utter_out_of_scope:
+    - text: Sorry, I can't handle that request.
+  utter_please_rephrase:
+    - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_default:
+    - text: Sorry I didn't get that. Can you rephrase?
+  utter_module_specifications:
+    - text: This is what the module requires! MAKE THIS AN ACTION
 actions:
   - "..."
   - action_repeat_values
   - utter_ask_codingAbility
   - utter_ask_language
   - utter_ask_studyField
+  - utter_default
   - utter_field_list
   - utter_goodbye
   - utter_greet
   - utter_help
   - utter_i_am_a_bot
   - utter_invalid_input
+  - utter_out_of_scope
+  - utter_please_rephrase
   - utter_slot_values
   - utter_submit
   - validate_chooseModule_form
+  - utter_module_specifications
+  - action_module_specifications
+  - action_list_modules

@@ -1,97 +1,134 @@
 version: "3.1"
 nlu:
-- intent: greet
-  examples: |
-    - Hi
-    - Hey!
-    - Hello
-    - Good day
-    - Good morning
-    - hi
-- intent: leave
-  examples: |
-    - bye
-    - cya
-    - goodbye
-    - i'll go now
-    - thanks for everything
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you human?
-- intent: help
-  examples: |
-    - help
-    - I'm confused
-    - what is your purpose
-    - help me
-- intent: fieldQuery
-  examples: |
-    - what fields can i study?
-    - can you give be a list of fields?
-- intent: chooseModule
-  examples: |
-    - i want to study
-    - i'm interested in picking a module
-    - i want to learn
-    - module form
-    - Hi, I’m looking for a module to study next semester.
-    - hi i would like help choosing a module
-    - hi, i want help to choose a module to study
-- intent: inform
-  examples: |
-    - I'd like to study [AI](studyField)
-    - my ability is about a [4](codingAbility)
-    - my skill levis is [1](codingAbility))
-    - i want to learn about [web development](studyField)
-    - [web development](studyField)
-    - [4](codingAbility)
-    - [web development][{"entity": "studyField"}, {"entity": "studyField"}]
-    - [2](codingAbility)
-    - [5](codingAbility)
-    - I really enjoy learning about [artificial intelligence](studyField)
-    - i want to learn about [AI][{"entity": "studyField"}, {"entity": "studyField"}]
-    - [AI][{"entity": "studyField"}, {"entity": "studyField"}]
-    - [4][{"entity": "codingAbility"}, {"entity": "codingAbility"}]
-    - I want to learn about [AI](studyField)
-    - I would say that i'm a [4](codingAbility)
-    - [ai](studyField)
-    - [5](codingAbility)
-- intent: languageSelection
-  examples: |
-    - i want to learn [Java](language)
-    - it would be fun to learn [C++](language)
-    - i'm interesetd in [Haskell](language)
-    - [python](language) excites me.
-    - [python][{"entity": "language"}, {"entity": "language"}]
-    - [Python][{"entity": "language"}, {"entity": "language"}]
-    - [Python](language)
-    - [python](language)
-- lookup: studyField
-  examples: |
-    - Web Development
-    - Artificial Intelligence
-    - AI
-    - Data Analysis
-    - UX
-    - User Experience
-    - Cyber Securtiy
-    - Databases
-- lookup: codingAbility
-  examples: |
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-- lookup: language
-  examples: |
-    - Java
-    - C
-    - C++
-    - C#
-    - Python
-    - Haskell
-    - HTML
-    - Javascript
-    - CSS
+  - intent: greet
+    examples: |
+      - Hi
+      - Hey!
+      - Hello
+      - Good day
+      - Good morning
+      - hi
+  - intent: leave
+    examples: |
+      - bye
+      - cya
+      - goodbye
+      - i'll go now
+      - thanks for everything
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you human?
+  - intent: help
+    examples: |
+      - help
+      - I'm confused
+      - what is your purpose
+      - help me
+  - intent: fieldQuery
+    examples: |
+      - what fields can i study?
+      - can you give be a list of fields?
+      - could you give me a list of options?
+  - intent: chooseModule
+    examples: |
+      - i want to study
+      - i'm interested in picking a module
+      - i want to learn
+      - module form
+      - Hi, I’m looking for a module to study next semester.
+      - hi i would like help choosing a module
+      - hi, i want help to choose a module to study
+      - i would like help to choose a module to study next year
+      - i want help to choose a module to study
+      - i want tostudy
+      - chi cken and andhiudaw
+  - intent: inform
+    examples: |
+      - I'd like to study [AI](studyField)
+      - my ability is about a [4](codingAbility)
+      - my skill levis is [1](codingAbility))
+      - i want to learn about [web development](studyField)
+      - [web development](studyField)
+      - [4](codingAbility)
+      - [web development][{"entity": "studyField"}, {"entity": "studyField"}]
+      - [2](codingAbility)
+      - [5](codingAbility)
+      - I really enjoy learning about [artificial intelligence](studyField)
+      - i want to learn about [AI][{"entity": "studyField"}, {"entity": "studyField"}]
+      - [AI][{"entity": "studyField"}, {"entity": "studyField"}]
+      - [4][{"entity": "codingAbility"}, {"entity": "codingAbility"}]
+      - I want to learn about [AI](studyField)
+      - I would say that i'm a [4](codingAbility)
+      - [ai](studyField)
+      - i'd like to learn about [UX](studyField)
+      - i'd love to learn more about [web development](studyField)
+      - i think i'm very new so i would say a [1](codingAbility)
+      - [Web Development](studyField)
+      - [5](codingAbility)
+  - intent: languageSelection
+    examples: |
+      - i want to learn [Java](language)
+      - it would be fun to learn [C++](language)
+      - i'm interesetd in [Haskell](language)
+      - [python](language) excites me.
+      - [python][{"entity": "language"}, {"entity": "language"}]
+      - [Python][{"entity": "language"}, {"entity": "language"}]
+      - [Python](language)
+      - [python](language)
+      - Haske
+      - [Haskell](language)
+      - [Java](language)
+      - [python](language)
+  - intent: moduleQuery
+    examples: |
+      - Can you tell me more about [Computer Systems](module) ?
+      - What does the assement look like for [Design Dialogues](module) ?
+      - will there be an exam for the [Security Audit & Compliance](module) module?
+  - intent: listModules
+    examples: |
+      - can you list all the available modules for me to study?
+      - can you give me the options for which modules to take?
+      - what modules can i pick?
+  - lookup: studyField
+    examples: |
+      - Web Development
+      - Artificial Intelligence
+      - AI
+      - Data Analysis
+      - UX
+      - User Experience
+      - Cyber Securtiy
+      - Databases
+  - lookup: codingAbility
+    examples: |
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+  - lookup: language
+    examples: |
+      - Java
+      - C
+      - C++
+      - C#
+      - Python
+      - Haskell
+      - HTML
+      - Javascript
+      - CSS
+  - lookup: module
+    examples: |
+      - Computer Systems
+      - Design Dialogues
+      - Security Audit & Compliance
+      - Strategic Information Systems Management
+      - Data-Driven Decision Making (Blended mode)
+      - Database Systems
+      - Software Development 1 
+      - Advanced Software Development 
+      - Emergent Computing for Optimisation 
+      - Knowledge Management 
+      - Network Security
+      - Host-Based Forensics
