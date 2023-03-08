@@ -42,7 +42,7 @@ class ActionModuleSpecifications(Action):
         import csv
 
         cur_path = os.path.dirname(__file__)
-        file_path = os.path.join(cur_path, '..\\dataset\\moduleInfoTest.csv')
+        file_path = os.path.join(cur_path, '..\\dataset\\moduleInfo.csv')
         moduleName = tracker.get_slot("module")
 
         if moduleName is None:
@@ -104,7 +104,7 @@ class ActionListModules(Action):
         import csv
 
         cur_path = os.path.dirname(__file__)
-        file_path = os.path.join(cur_path, '..\\dataset\\moduleInfoTest.csv')
+        file_path = os.path.join(cur_path, '..\\dataset\\moduleInfo.csv')
 
         msg = f"This is a list of the modules available to you:\n"        
 
