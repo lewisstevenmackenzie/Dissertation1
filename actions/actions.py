@@ -22,7 +22,7 @@ class ActionRepeatValues(Action):
         codingAbilityEnglish = ["minimal", "not good", "okay", "very good", "great"]
 
 
-        msg = f"Okay, so you would like to study {studyField} and you are {codingAbilityEnglish[int(codingAbility)-1]} at coding. You also have said you are inerested in learning the {language} language. I will now search for some possible modules that fit this criteria."
+        msg = f"Okay, so you would like to study {studyField} and you are {codingAbilityEnglish[int(codingAbility)-1]} at coding. You also have said you are interested in learning the {language} language. I will now search for some possible modules that fit this criteria."
 
         dispatcher.utter_message(text=msg)
 
@@ -44,6 +44,12 @@ class ActionModuleSpecifications(Action):
         cur_path = os.path.dirname(__file__)
         file_path = os.path.join(cur_path, '..\\dataset\\moduleInfoTest.csv')
         moduleName = tracker.get_slot("module")
+
+        if moduleName is None:
+            msg = "There was a non Type sent"
+
+            dispatcher.utter_message(text=msg)
+            return[]
 
         print('this is the module name: ' + moduleName)
         msg = ""
@@ -72,8 +78,13 @@ class ActionModuleSpecifications(Action):
                         msg = msg + "There will not be a class test for this module. "
                     else: 
                         msg = msg + f"The class test portion is {row['Class Test']}%. "
+                    
+                    if "n/a" in row['Prerequisites']:
+                        msg = msg + "There are no prerequisites to study this module. "
+                    else:
+                        msg = msg + f"You must have passed {row['Prerequisites']} in order to take this module. "
                      
-                    msg =  msg +  f"The module is worth {row['Credits']} credits and is SCQF Level {row['SCQF Level']}\nModule Description:\n{row['Description']}"
+                    msg =  msg +  f"The module is worth {row['Credits']} credits and is SCQF Level {row['SCQF Level']}.\nModule Description:\n{row['Description']}"
 
         dispatcher.utter_message(text=msg)
 
@@ -105,6 +116,36 @@ class ActionListModules(Action):
                 print(row['Module Code'], row['Module Name'])
 
                 msg = msg + f"  {row['Module Name']}\n"
+
+        dispatcher.utter_message(text=msg)
+
+        return [] 
+
+
+
+class ActionListStudyFields(Action):
+
+    def name(self) -> Text:
+        return "action_list_study_fields"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        import os
+        import csv
+
+        cur_path = os.path.dirname(__file__)
+        file_path = os.path.join(cur_path, '..\\dataset\\studyFields.csv')
+
+        msg = f"This is a list of the possible fields you can Study Fields:\n"        
+
+        with open(file_path, newline='') as csvfile:
+        
+            reader = csv.DictReader(csvfile)
+        
+            for row in reader:
+                msg = msg + f"  {row['Study Fields']}\n"
 
         dispatcher.utter_message(text=msg)
 

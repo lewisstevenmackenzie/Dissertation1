@@ -66,6 +66,8 @@ nlu:
       - i think i'm very new so i would say a [1](codingAbility)
       - [Web Development](studyField)
       - [5](codingAbility)
+      - i would like to learn about [Cyber Securtiy](studyField)
+      - i would rate my coding ability at a [4](codingAbility)
   - intent: languageSelection
     examples: |
       - i want to learn [Java](language)
@@ -90,6 +92,12 @@ nlu:
       - can you list all the available modules for me to study?
       - can you give me the options for which modules to take?
       - what modules can i pick?
+      - can you give me a list of possible modules to study
+  - intent: unsureOnStudyField
+    examples: |
+      - i'm not sure which field to study
+      - i don't know which area i'm interested in.
+      - hmmm, i'm sorry i dont know what i want to study.
   - lookup: studyField
     examples: |
       - Web Development
@@ -98,7 +106,7 @@ nlu:
       - Data Analysis
       - UX
       - User Experience
-      - Cyber Securtiy
+      - Cyber Securty
       - Databases
   - lookup: codingAbility
     examples: |
