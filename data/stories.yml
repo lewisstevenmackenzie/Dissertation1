@@ -19,8 +19,16 @@ stories:
           - module: Computer Systems
       - slot_was_set:
           - module: Computer Systems
-      #- action: utter_module_specifications
       - action: action_module_specifications
+
+  - story: recommend similar modules
+    steps:
+      - intent: recommend
+        entities:
+          - module: Computer Systems
+      - slot_was_set:
+          - module: Computer Systems
+      - action: action_recommend_similar_description
 
   - story: choosing field
     steps:
@@ -43,6 +51,13 @@ stories:
       - intent: fieldQuery
       #- action: utter_field_list
       - action: action_list_study_fields
+
+  #   - story: user want a professors email address
+  #     steps:
+  #       - intent: staffEmail
+  #       - slot_was_set:
+  #           - staffEmail: "Neil Urqhuart"
+  #       - action: action_send_staff_email
 
   - story: interactive_story_1
     steps:
@@ -68,6 +83,7 @@ stories:
       - active_loop: null
       - action: utter_submit
       - action: action_repeat_values
+      - action: action_recommend_similar_keywords
 
   - story: interactive_story_2
     steps:
@@ -97,6 +113,7 @@ stories:
       - active_loop: null
       - action: utter_submit
       - action: action_repeat_values
+      - action: action_recommend_similar_keywords
       #   - story: interactive_story_3
       #     steps:
       #       - intent: chooseModule
@@ -176,3 +193,4 @@ stories:
       - active_loop: null
       - action: utter_submit
       - action: action_repeat_values
+      - action: action_recommend_similar_keywords

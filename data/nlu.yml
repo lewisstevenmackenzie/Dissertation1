@@ -98,6 +98,26 @@ nlu:
       - i'm not sure which field to study
       - i don't know which area i'm interested in.
       - hmmm, i'm sorry i dont know what i want to study.
+  - intent: visaQuestions
+    examples: |
+      - can you give me any information about the visa process?
+      - i'm currently living in a different country and would like some information regarding the visa application.
+      - do i need a visa?
+      - will the university help with my visa application?
+      - what are the steps to get a visa?
+      - can you help with the immigration process?
+  - intent: staffEmail
+    examples: |
+      - what is [kevin](staffEmail) email address
+      - can you tell me the email address of [Neil Urqhuart](staffEmail)
+      - [yanchao Yu](staffEmail) email address?
+
+  - intent: recommend
+    examples: |
+      - can you recomend a module similar to [Computer Systems](module)
+      - what modules are similar to [Knowledge Management](module)
+      - can you recommend a module similar to [Design Dialogues](module)
+
   - lookup: studyField
     examples: |
       - Web Development
@@ -108,6 +128,8 @@ nlu:
       - User Experience
       - Cyber Securty
       - Databases
+      - Computer Science
+
   - lookup: codingAbility
     examples: |
       - 1
@@ -134,9 +156,9 @@ nlu:
       - Strategic Information Systems Management
       - Data-Driven Decision Making (Blended mode)
       - Database Systems
-      - Software Development 1 
-      - Advanced Software Development 
-      - Emergent Computing for Optimisation 
-      - Knowledge Management 
+      - Software Development 1
+      - Advanced Software Development
+      - Emergent Computing for Optimisation
+      - Knowledge Management
       - Network Security
       - Host-Based Forensics

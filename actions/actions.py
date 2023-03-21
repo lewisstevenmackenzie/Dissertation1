@@ -1,5 +1,8 @@
 from typing import Any, Text, Dict, List
 
+from recommendation.descriptionRecommender import *
+from recommendation.keywordRecommender import *
+
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
@@ -147,6 +150,92 @@ class ActionListStudyFields(Action):
             for row in reader:
                 msg = msg + f"  {row['Study Fields']}\n"
 
+        dispatcher.utter_message(text=msg)
+
+        return [] 
+
+class ActionsendStaffEmail(Action):
+
+    def name(self) -> Text:
+        return "action_send_staff_email"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        import os
+        import csv
+
+        cur_path = os.path.dirname(__file__)
+        file_path = os.path.join(cur_path, '..\\dataset\\staffEmails.csv')
+
+        staffMemeber = tracker.get_slot("staffEmail")
+        intent = tracker.get_intent_of_latest_message()
+        flag = 1
+        msg = f""        
+
+        with open(file_path, newline='') as csvfile:
+        
+            reader = csv.DictReader(csvfile)
+        
+            for row in reader:
+                if row['Name'].lower() == "visaemail" and intent == "visaQuestions":
+                    msg = msg + f"I'm sorry, I am only a chatbot. For further assistance regarding Visa's please contact {row['Email']}.\n"
+                elif intent =="staffemail" and staffMemeber is not None:
+                    if staffMemeber.lower() in row['Name'].lower():
+                        msg = msg + f"This is {row['Name']}'s email address: {row['Email']}."
+                        flag = 0
+
+        if intent == "staffEmail" and flag == 1:
+            msg = msg + "I am sorry, the name you have given does not appear in our system. Please can you try again?"
+        dispatcher.utter_message(text=msg)
+
+        return [] 
+    
+class ActionrecommendSimilarDescription(Action):
+
+    def name(self) -> Text:
+        return "action_recommend_similar_description"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        import os
+        import csv
+
+        moduleName = tracker.get_slot("module")
+        recommendedModule = recommend_module_based_on_description(moduleName)
+        print(recommendedModule)
+
+        msg = f"You made it to the recommender, This the module that is being recommended {recommendedModule}" 
+        dispatcher.utter_message(text=msg)
+
+        return [] 
+    
+    
+class ActionrecommendSimilarDescription(Action):
+
+    def name(self) -> Text:
+        return "action_recommend_similar_keywords"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        import os
+        import csv
+
+        field = []
+        keywords = []
+
+        field.append(tracker.get_slot("studyField"))
+        keywords.append(tracker.get_slot("language"))
+
+        recommendedModule = recommend_module_based_on_metadata('userModule', field, keywords)
+        print(recommendedModule)
+
+        msg = f"You made it to the recommender, This the module that is being recommended {recommendedModule}" 
         dispatcher.utter_message(text=msg)
 
         return [] 
