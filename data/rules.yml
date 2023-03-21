@@ -15,6 +15,7 @@ rules:
           - requested_slot: null
       - action: utter_submit
       - action: action_repeat_values
+      - action: action_recommend_similar_keywords
 
   - rule: Form interrupted with field Query
     condition:
@@ -60,6 +61,15 @@ rules:
       - intent: unsureOnStudyField
       - action: action_list_study_fields
 
+  - rule: user asks about Visa's
+    steps:
+      - intent: visaQuestions
+      - action: action_send_staff_email
+
+  # - rule: testing recommendation
+  #   steps:
+  #     - intent: recommend
+  #     - action: action_recommend_similar_description
   # - rule: State what the module involves
   #   steps:
   #     - intent: moduleQuery

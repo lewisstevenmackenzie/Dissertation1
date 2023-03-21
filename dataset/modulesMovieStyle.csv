@@ -1,0 +1,87 @@
+Trimeseter,Module Code,Module Name,Credits,SCQF Level,Prerequisites,Exam,Class Test,Coursework,Description,Lecturer,Fields,Keywords
+1,CSN11108,Computer Systems,10,11,n/a,60,40,0,"Key features of PC-based systems: Motherboards, hub chips, processors, RAM and cache.
+Basic processor operation: the fetch execute cycle and interrupts.
+Principles of operating systems: virtual memory and multitasking.
+Case study: the Windows operating system.
+Main features of local area networks and the Internet: Ethernet, wireless networks, the Internet Protocol. Introduction to some of the main network devices, such as switches and routers.",{'Imed Romdhani'},"[{'name': 'Cyber Security'}, {'name': 'Systems Engineering'}]","[{'name': 'Motherboards'}, {'name': 'processor'}, {'name': 'operating'}, {'name': 'system'}, {'name': 'networks'}, {'name': 'Protocol'}]"
+1,IMD11112,Design Dialogues,20,11,n/a,0,0,100,"Design dialogues will cover the practical methods involved in gathering user requirements with respect to a wide range of interactive applications for work, the web and the home and designing to meet those requirements. The methods will include techniques such as interviews, observation, modelling of existing practice, participatory design techniques and user and expert based techniques for evaluating system usability.",{'Emilia Sobolewska'},[{'name': 'Applied Informatics'}],"[{'name': 'Design'}, {'name': 'requirements'}, {'name': 'dialogues'}, {'name': 'interviews'}, {'name': 'observation'}]"
+1,INF11109,Security Audit & Compliance,20,11,n/a,0,0,100,"The aim of the module is to let you develop a deep understanding of the framework that information security operates in, and to give you an opportunity to express this in the form of professional written reports. Topics covered include:
+Overview of relevant laws and regulations: national and international, covering Data Protection, computer misuse and other legal issues.
+The relation between governance models and frameworks including: ISACAs COBIT and ISO Standards (ISO27000 in particular)
+Role of the professions; difference between audit, forensics and security management. Professional ethics and codes of practice
+Risk management, contingency and continuity planning
+Understanding and application of the COBIT domains",{'Peter Cruickshank'},"[{'name': 'Applied Informatics'}, {'name': 'Security'}]","[{'name': 'information'}, {'name': 'security'}, {'name': 'regulations'}, {'name': 'ethics'}, {'name': 'Risk'}, {'name': 'COBIT'}]"
+1,INF11115,Strategic Information Systems Management,20,11,n/a,0,0,100,Evolving role of strategic IS/IT systems; Management of strategic IS/IT systems; Processes for developing effective IS/IT strategies; Alignment of IS/IT strategies with business strategies; Innovating with IS/IT systems; Strategic IS/IT systems for competitive advantage; Tools & techniques for building IS/IT strategic capabilities; Evaluating & justifying IS/IT systems; Managing a portfolio of IS/IT applications. Positioning & managing strategic IS/IT systems.,{'Pritam Chita'},"[{'name': 'Applied Informatics'}, {'name': 'Management'}]","[{'name': 'Strategic'}, {'name': 'systems'}, {'name': 'Management'}, {'name': 'Information'}, {'name': 'Evaluating'}, {'name': 'managing'}]"
+1,INF11116,Data-Driven Decision Making (Blended mode),20,11,n/a,0,0,100,"A primary use of data by contemporary organisations is to analyse and explore opportunities for growth or change, either directly or indirectly. The demand for business data, whether operational management, data analytics or data science (such as big data, machine learning & predictive analytics) has increased substantially. This has resulted from an organisational need for a more sophisticated approach to analytics and data from both a business and statistical understanding of data and its impacts on the organisation. This raises complex and multifaceted issues.
+
+The aim of the module is to enable you develop a deep understanding of the business context and impact of data, the meaning of the data (including in terms of statistics), and to give you an opportunity to express this in the form of professional written reports. Topics covered include:
+The role of the data scientist
+Data strategy and Key Performance Indicators (KPIs)
+Deployment and implementation
+Governance, ethical and cultural implications
+Exploring and describing data,
+Statistical inference  parametric methods t  tests and Analysis of Variance Statistical presentation of data.
+Multivariate methods  principal component analysis, exploratory factor analysis and segmentation methods (Hierarchical clustering, K means and K modes).
+Statistical modelling  OLS regression, general linear models exemplified by Binary Logistic models
+Diagnosing model fits
+
+The R package for statistics will be used in this module.
+
+The Benchmark Statement for Computing specifies the range of skills and knowledge that should be incorporated in computing courses. This module encompasses cognitive skills in computational thinking and its relevance to everyday life, critical evaluation and professional considerations and practical skills in the deployment and use of tools and critical evaluation of complex problems in addition to providing useful generic skills for employment.",{'Peter Barclay'},"[{'name': 'Computer Science'}, {'name': 'Business'}, {'name': 'Java'}]","[{'name': 'Data'}, {'name': 'analyse'}, {'name': 'big data'}, {'name': 'statistics'}, {'name': 'scientist'}, {'name': 'Statistical'}]"
+1,SET11101,Database Systems,10,11,n/a,0,0,100,"Database architecture and functionality
+Data analysis and entity-relationship modelling
+Normalisation (to third normal form)
+SQL  theory and practical skills
+The role of a Database Administrator (DBA)
+Practical exposure to current software tools
+Current trends in database technology",{'Peter Barclay'},"[{'name': 'Computer Science'}, {'name': 'Databases'}, {'name': 'Java'}, {'name': 'SQL'}]","[{'name': 'Database'}, {'name': 'architecture'}, {'name': 'analysis'}, {'name': 'Normalisation'}, {'name': 'SQL'}, {'name': 'functionality'}]"
+1,SET11102 ,Software Development 1,20,11,n/a,0,10,90,"Program Environment: Use of an interactive development environment.
+
+Basic Programming Skills: Variable declarations, printing to the
+screen, reading from the keyboard, simple arithmetic operations,
+sequence, selection and iteration, functional decomposition, arrays,
+simple GUI's.
+
+Introduction to object-oriented programming.
+
+Program testing and documentation.",{'John Owens'},[{'name': 'Computer Science'}],"[{'name': 'Software'}, {'name': 'Development'}, {'name': 'Programming'}, {'name': 'Object'}]"
+1,SET11104 ,Advanced Software Development,20,11,n/a,0,0,100,"Research: Investigate, summarise and present findings on a recently published software engineering research paper.
+
+Research: Investigate, summarise and present findings on a software engineering research topic and incorporate that that topic into your coursework.
+
+Practical: You will produce a piece of non-trivial software to demonstrate your software engineering research topic in use.
+
+Report: You will write a report about your practical work in the form of a research paper suitable for publication in a journal.",{'John Owens'},[{'name': 'Computer Science'}],"[{'name': 'Software'}, {'name': 'Development'}, {'name': 'Programming'}, {'name': 'Object'}]"
+1,SET11108,Emergent Computing for Optimisation ,20,11,n/a,40,0,60,"The module will address:
+
+- Why some problems are hard to solve
+
+- Modern heuristic search methods such as Evolutionary Algorithms, including evolution
+strategies; meta-heuristic search techniques such as tabu-search, simulated annealing, iterated local search; ant-colony optimisation; hyper-heuristics and associated methods.
+
+- Appropriate experimental methodologies for testing and analysing emergent computing algorithms.
+
+- Simple statistical methods for evaluating the results.",{'Emma Hart'},"[{'name': 'Computer Science'}, {'name': 'AI'}, {'name': 'Programming'}, {'name': 'Python'}]","[{'name': 'Algorithms'}, {'name': 'Evolution'}, {'name': 'optimisation'}, {'name': 'statistics'}, {'name': 'evolution'}]"
+1,CSI11104,Knowledge Management,20,11,n/a,0,0,100,"Approaches to knowledge management
+Knowledge capital.
+Knowledge management infrastructure: technical and social.
+Techniques for the creation, capture, classification, exchange, dissemination and use of knowledge for competitive advantage and corporate growth.
+Knowledge strategy",{'Frances Ryan'},[{'name': 'Applied Informatics'}],"[{'name': 'management'}, {'name': 'Knowledge'}, {'name': 'classification'}, {'name': 'strategy'}]"
+1,CSN11111,Network Security [ASDF],20,11,n/a,50,0,50,"The aim of the module is to develop a deep understanding of advanced areas related to security and digital forensics that will allow graduates to act professionally in the design, analysis, implementation, and reporting of network security strategies. An outline of the main areas includes:
+
+Introduction. Networking Concepts; Network Security Concepts; Network Threats and Attacks; Network Defense - Perimeter, Defence in Depth
+
+Firewalls. Concepts; Types - Host, Network; Technologies - Static packet filtering; Stateful packet filtering; Multilayer firewall; Architectures; Polices; and Implementation and Deployment.
+
+Intrusion Detection and Prevention Systems (IDPS). Concepts; Types; Alert Monitoring and Sensor Tuning; behavioural analysis, in-line/out-of-line.
+
+Access Control and Authentication. Concepts: Trust and Identity; Attacks; Models - Access Control Models; Network Device Access Control; AAA, Layer 2; Device Hardening.
+
+emote Access and VPNs. Concepts; Cryptography; Types - L2, L3 and L4/5; Technologies; IPSec and SSL.
+
+Wireless Security. Wireless Overview; Attacks; Encryption; Authentication.
+
+CCNA Certification - Concepts. CIA; Attacks on CIA; Data Classification; Law and Ethics; Network policies; Risk Management and Secure Network Design; Security in the SDLC; Cisco self-defending network; Secure Administration.
+
+CCNA Certification - Secure Infrastructure and Extending Security. Cisco Layer 2 Security; Cisco IOS Firewalls. Cisco IOS IPS; Cisco VPN and Cryptographic Solutions; Digital Signatures and PKI.",{'Thomas Tan'},"[{'name': 'Cyber Security'}, {'name': 'Systems Engineering'}]","[{'name': 'Networking'}, {'name': 'Firewalls'}, {'name': 'Security'}, {'name': 'Systems'}]"
+1,CSN11125,Host-Based Forensics [ASDF],20,11,n/a,30,40,30,"This module will cover elements of operating system disk-level architectures, such as Windows and Linux. This will allow students to study how operating systems store system and user data, and thus students will gain an understanding as to what information could technically be held on such systems. This data could include user files, as well as user activities such as login session data, browsing histories, operating system manipulation, and general user interactions with a variety of operating system tools. This understanding will be expanded through theoretical knowledge and practical exercises in extracting information from systems, using a variety of open source and commercial forensic analysis tools, and documenting the results of such a process using consistent and thorough evidential procedures. This includes the production of event timelines, as well as the analysis of system logs, operating system state, file systems, and application data. The module will also consider the ethical and professional issues related to digital forensics.",{'Robert Ludwiniak'},"[{'name': 'Cyber Security'}, {'name': 'Systems Engineering'}]","[{'name': 'system'}, {'name': 'data'}, {'name': 'Security'}, {'name': 'Systems'}, {'name': 'analysis'}]"
