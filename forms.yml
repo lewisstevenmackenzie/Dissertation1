@@ -23,9 +23,30 @@ slots:
         conditions:
           - active_loop: module_form
             requested_slot: language
+  # module:
+  #   type: text
+  #   influence_conversation: true
+  #   mappings:
+  #     - type: from_entity
+  #       conditions:
+  #         - active_loop: more_info_form
+  #           requested_slot: module
+  answer:
+    type: bool
+    influence_conversation: true
+
 forms:
   module_form:
     required_slots:
       - studyField
       - codingAbility
       - language
+
+  enforce_yes_or_no_form:
+  answer:
+    - type: from_intent
+      intent: confirm
+      value: true
+    - type: from_intent
+      intent: deny
+      value: false

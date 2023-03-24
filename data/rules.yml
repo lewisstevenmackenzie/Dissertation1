@@ -16,6 +16,9 @@ rules:
       - action: utter_submit
       - action: action_repeat_values
       - action: action_recommend_similar_keywords
+      - slot_was_set:
+          - module: Data-Driven Decision Making (Blended mode)
+      - action: utter_learn_more_about_module
 
   - rule: Form interrupted with field Query
     condition:
@@ -65,6 +68,41 @@ rules:
     steps:
       - intent: visaQuestions
       - action: action_send_staff_email
+
+  # - rule: comfirm user wants to learn more about a module
+  #   condition:
+  #     - active_loop:
+  #   steps:
+  #     - intent: confirm
+  #     - action: action_module_leader_query
+  #     - active_loop: null
+
+  - rule: User want to know more about the module
+    steps:
+      - action: utter_learn_more_about_module
+      - intent: confirm
+      - action: action_module_leader_query
+      - action: utter_would_you_like_module_description
+
+  - rule: User doesn't want to know more about the module
+    steps:
+      - action: utter_learn_more_about_module
+      - intent: deny
+      - action: utter_how_can_i_help
+
+  - rule: User wants full module description
+    steps:
+      - action: action_module_leader_query
+      - action: utter_would_you_like_module_description
+      - intent: confirm
+      - action: action_module_description
+
+  - rule: User doesn't wants full module description
+    steps:
+      - action: action_module_leader_query
+      - action: utter_would_you_like_module_description
+      - intent: deny
+      - action: utter_how_can_i_help
 
   # - rule: testing recommendation
   #   steps:

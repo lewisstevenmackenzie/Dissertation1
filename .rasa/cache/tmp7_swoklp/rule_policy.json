@@ -1,0 +1,61 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"visaQuestions\"}}]": "action_send_staff_email",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"visaQuestions\"}}, {\"prev_action\": {\"action_name\": \"action_send_staff_email\"}, \"user\": {\"intent\": \"visaQuestions\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"chooseModule\"}}]": "module_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"chooseModule\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"chooseModule\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_module_leader_query",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_module_leader_query\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "utter_please_rephrase",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_please_rephrase\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"module_form\"}}]": "utter_submit",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"module_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]": "action_repeat_values",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"module_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_repeat_values\"}}]": "action_recommend_similar_keywords",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"module_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_repeat_values\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_recommend_similar_keywords\"}, \"slots\": {\"module\": [1.0]}}]": "utter_learn_more_about_module",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"module_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_repeat_values\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_recommend_similar_keywords\"}, \"slots\": {\"module\": [1.0]}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_learn_more_about_module\"}, \"slots\": {\"module\": [1.0]}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}]": "action_list_study_fields",
+      "[{\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_list_study_fields\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}]": "module_form",
+      "[{\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_list_study_fields\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fieldQuery\"}}]": "action_list_study_fields",
+      "[{\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fieldQuery\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_list_study_fields\"}, \"user\": {\"intent\": \"fieldQuery\"}}]": "module_form",
+      "[{\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fieldQuery\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_list_study_fields\"}, \"user\": {\"intent\": \"fieldQuery\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"fieldQuery\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}]": "action_list_study_fields",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}, {\"prev_action\": {\"action_name\": \"action_list_study_fields\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"out_of_scope\"}}]": "utter_out_of_scope",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"out_of_scope\"}}, {\"prev_action\": {\"action_name\": \"utter_out_of_scope\"}, \"user\": {\"intent\": \"out_of_scope\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"listModules\"}}]": "action_list_modules",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"listModules\"}}, {\"prev_action\": {\"action_name\": \"action_list_modules\"}, \"user\": {\"intent\": \"listModules\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"chooseModule\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_list_study_fields\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_list_study_fields\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"fieldQuery\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"slots\": {\"codingAbility\": [1.0], \"studyField\": [1.0]}, \"user\": {\"intent\": \"chooseModule\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"utter_default\"}, \"slots\": {\"codingAbility\": [1.0], \"studyField\": [1.0]}, \"user\": {\"intent\": \"languageSelection\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"utter_default\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"codingAbility\": [1.0], \"language\": [1.0], \"studyField\": [1.0]}, \"user\": {\"entities\": [\"language\"], \"intent\": \"languageSelection\"}}]": "loop_was_interrupted",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"utter_ask_to_continue\"}, \"user\": {\"intent\": \"stop\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"module_form\"}, \"user\": {\"intent\": \"field\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"out_of_scope\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_please_rephrase\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"listModules\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"out_of_scope\"}}, {\"prev_action\": {\"action_name\": \"utter_out_of_scope\"}, \"user\": {\"intent\": \"out_of_scope\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"listModules\"}}, {\"prev_action\": {\"action_name\": \"action_list_modules\"}, \"user\": {\"intent\": \"listModules\"}}]",
+      "[{\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fieldQuery\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}]",
+      "predicting default action with intent session_start",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"visaQuestions\"}}, {\"prev_action\": {\"action_name\": \"action_send_staff_email\"}, \"user\": {\"intent\": \"visaQuestions\"}}]",
+      "handling active loops and forms - module_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"visaQuestions\"}}]",
+      "[{\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fieldQuery\"}}, {\"active_loop\": {\"name\": \"module_form\"}, \"prev_action\": {\"action_name\": \"action_list_study_fields\"}, \"user\": {\"intent\": \"fieldQuery\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}, {\"prev_action\": {\"action_name\": \"action_list_study_fields\"}, \"user\": {\"intent\": \"unsureOnStudyField\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]"
+    ]
+  }
+}

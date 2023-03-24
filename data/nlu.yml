@@ -42,7 +42,10 @@ nlu:
       - i would like help to choose a module to study next year
       - i want help to choose a module to study
       - i want tostudy
-      - chi cken and andhiudaw
+      - can you help to recommend a module please?
+      - can you help me to choose a module?
+      - I WANT HELP TO CHOOSE A MODULE
+      - i want help to choose a module
   - intent: inform
     examples: |
       - I'd like to study [AI](studyField)
@@ -65,9 +68,13 @@ nlu:
       - i'd love to learn more about [web development](studyField)
       - i think i'm very new so i would say a [1](codingAbility)
       - [Web Development](studyField)
-      - [5](codingAbility)
       - i would like to learn about [Cyber Securtiy](studyField)
       - i would rate my coding ability at a [4](codingAbility)
+      - i want to learn about [Computer Science](studyField)
+      - [3](codingAbility)
+      - [Computer Science](studyField)
+      - [Computer Science](studyField)
+      - [5](codingAbility)
   - intent: languageSelection
     examples: |
       - i want to learn [Java](language)
@@ -81,12 +88,13 @@ nlu:
       - Haske
       - [Haskell](language)
       - [Java](language)
-      - [python](language)
+      - [Java](language)
   - intent: moduleQuery
     examples: |
       - Can you tell me more about [Computer Systems](module) ?
       - What does the assement look like for [Design Dialogues](module) ?
       - will there be an exam for the [Security Audit & Compliance](module) module?
+      - What can you tell me about [Knowledge Management](module)
   - intent: listModules
     examples: |
       - can you list all the available modules for me to study?
@@ -98,6 +106,7 @@ nlu:
       - i'm not sure which field to study
       - i don't know which area i'm interested in.
       - hmmm, i'm sorry i dont know what i want to study.
+      - can you list the possible fields?
   - intent: visaQuestions
     examples: |
       - can you give me any information about the visa process?
@@ -111,13 +120,31 @@ nlu:
       - what is [kevin](staffEmail) email address
       - can you tell me the email address of [Neil Urqhuart](staffEmail)
       - [yanchao Yu](staffEmail) email address?
-
   - intent: recommend
     examples: |
       - can you recomend a module similar to [Computer Systems](module)
       - what modules are similar to [Knowledge Management](module)
       - can you recommend a module similar to [Design Dialogues](module)
-
+  - intent: confirm
+    examples: |
+      - yes
+      - okay
+      - I do
+      - i do want to
+  - intent: deny
+    examples: |
+      - no
+      - i do not
+      - i don't
+      - please do not
+      - i don't want to
+  - intent: stop
+    examples: |
+      - stop
+      - i don't want to continue
+      - i want to leave
+      - i've had enough
+      - that will be everthing
   - lookup: studyField
     examples: |
       - Web Development
@@ -126,10 +153,11 @@ nlu:
       - Data Analysis
       - UX
       - User Experience
-      - Cyber Securty
+      - Cyber Security
       - Databases
       - Computer Science
-
+      - Applied Informatics
+      - systems engineering
   - lookup: codingAbility
     examples: |
       - 1

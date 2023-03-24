@@ -4,10 +4,24 @@ from recommendation.descriptionRecommender import *
 from recommendation.keywordRecommender import *
 
 from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted
 from rasa_sdk.executor import CollectingDispatcher
 
+class ActionSessionStart(Action):
+    def name(self) -> Text:
+        return "action_session_start"
 
+    async def run(
+      self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
+
+        # the session should begin with a `session_started` event
+        events = [SessionStarted()]
+
+        events.append(ActionExecuted("utter_greet"))
+
+        return events
+    
 class ActionRepeatValues(Action):
 
     def name(self) -> Text:
@@ -45,7 +59,7 @@ class ActionModuleSpecifications(Action):
         import csv
 
         cur_path = os.path.dirname(__file__)
-        file_path = os.path.join(cur_path, '..\\dataset\\moduleInfo.csv')
+        file_path = os.path.join(cur_path, '..\\dataset\\modulesMovieStyle2.csv')
         moduleName = tracker.get_slot("module")
 
         if moduleName is None:
@@ -87,7 +101,7 @@ class ActionModuleSpecifications(Action):
                     else:
                         msg = msg + f"You must have passed {row['Prerequisites']} in order to take this module. "
                      
-                    msg =  msg +  f"The module is worth {row['Credits']} credits and is SCQF Level {row['SCQF Level']}.\nModule Description:\n{row['Description']}"
+                    msg =  msg +  f"The module is worth {row['Credits']} credits and is SCQF Level {row['SCQF Level']}."
 
         dispatcher.utter_message(text=msg)
 
@@ -107,7 +121,7 @@ class ActionListModules(Action):
         import csv
 
         cur_path = os.path.dirname(__file__)
-        file_path = os.path.join(cur_path, '..\\dataset\\moduleInfo.csv')
+        file_path = os.path.join(cur_path, '..\\dataset\\modulesMovieStyle2.csv')
 
         msg = f"This is a list of the modules available to you:\n"        
 
@@ -235,7 +249,89 @@ class ActionrecommendSimilarDescription(Action):
         recommendedModule = recommend_module_based_on_metadata('userModule', field, keywords)
         print(recommendedModule)
 
-        msg = f"You made it to the recommender, This the module that is being recommended {recommendedModule}" 
+        msg = f"This module best suits your requirements {recommendedModule}. \nRemember I am only a chatbot in early development. Please contact the module leader before signing up." 
+        dispatcher.utter_message(text=msg)
+
+        return [SlotSet("module", recommendedModule)] 
+    
+class ActionModuleSpecifications(Action):
+
+    def name(self) -> Text:
+        return "action_module_leader_query"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        import os
+        import csv
+
+        cur_path = os.path.dirname(__file__)
+        file_path = os.path.join(cur_path, '..\\dataset\\modulesMovieStyle2.csv')
+        emails_file_path = os.path.join(cur_path, '..\\dataset\\staffEmails.csv')
+        moduleName = tracker.get_slot("module")
+
+        if moduleName is None:
+            msg = "There was a non Type sent"
+
+            dispatcher.utter_message(text=msg)
+            return[]
+
+        print('this is the module name: ' + moduleName)
+        msg = ""
+
+        with open(file_path, newline='') as csvfile:
+        
+            reader = csv.DictReader(csvfile)
+        
+            for row in reader:
+                if (moduleName.lower() in row['Module Name'].lower()):
+                    with open(emails_file_path, newline='') as csvfile2:        
+                        reader2 = csv.DictReader(csvfile2)
+
+                        for row2 in reader2:
+                            if row2['Name'].lower() in row['Lecturer'].lower():
+                                msg = msg + f"The {row['Module Name']} module is run by {row2['Name']}. You can contact them via email {row2['Email']}\n"
+
+        dispatcher.utter_message(text=msg)
+
+        return [] 
+    
+
+class ActionModuleSpecifications(Action):
+
+    def name(self) -> Text:
+        return "action_module_description"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        import os
+        import csv
+
+        cur_path = os.path.dirname(__file__)
+        file_path = os.path.join(cur_path, '..\\dataset\\modulesMovieStyle2.csv')
+        moduleName = tracker.get_slot("module")
+
+        if moduleName is None:
+            msg = "There was a non Type sent"
+
+            dispatcher.utter_message(text=msg)
+            return[]
+
+        print('this is the module name: ' + moduleName)
+        msg = ""
+
+        with open(file_path, newline='') as csvfile:
+        
+            reader = csv.DictReader(csvfile)
+        
+            for row in reader:
+                if (moduleName.lower() in row['Module Name'].lower()):
+                    
+                    msg += f"This is the Description: \n{row['Description']}"
+
         dispatcher.utter_message(text=msg)
 
         return [] 

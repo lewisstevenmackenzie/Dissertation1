@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-codingAbility",
+      "2": "I-codingAbility",
+      "3": "L-codingAbility",
+      "4": "U-codingAbility",
+      "5": "B-language",
+      "6": "I-language",
+      "7": "L-language",
+      "8": "U-language",
+      "9": "B-module",
+      "10": "I-module",
+      "11": "L-module",
+      "12": "U-module",
+      "13": "B-staffEmail",
+      "14": "I-staffEmail",
+      "15": "L-staffEmail",
+      "16": "U-staffEmail",
+      "17": "B-studyField",
+      "18": "I-studyField",
+      "19": "L-studyField",
+      "20": "U-studyField",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-codingAbility": 1,
+      "I-codingAbility": 2,
+      "L-codingAbility": 3,
+      "U-codingAbility": 4,
+      "B-language": 5,
+      "I-language": 6,
+      "L-language": 7,
+      "U-language": 8,
+      "B-module": 9,
+      "I-module": 10,
+      "L-module": 11,
+      "U-module": 12,
+      "B-staffEmail": 13,
+      "I-staffEmail": 14,
+      "L-staffEmail": 15,
+      "U-staffEmail": 16,
+      "B-studyField": 17,
+      "I-studyField": 18,
+      "L-studyField": 19,
+      "U-studyField": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

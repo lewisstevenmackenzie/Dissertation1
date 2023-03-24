@@ -194,3 +194,77 @@ stories:
       - action: utter_submit
       - action: action_repeat_values
       - action: action_recommend_similar_keywords
+
+  - story: interactive_story_6
+    steps:
+      - intent: chooseModule
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - intent: unsureOnStudyField
+      - action: action_list_study_fields
+      - action: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - slot_was_set:
+          - studyField: Computer Science
+      - slot_was_set:
+          - requested_slot: codingAbility
+      - slot_was_set:
+          - codingAbility: "3"
+      - slot_was_set:
+          - requested_slot: language
+      - slot_was_set:
+          - language: Java
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - action: action_repeat_values
+      - action: action_recommend_similar_keywords
+      - slot_was_set:
+          - module: Data-Driven Decision Making (Blended mode)
+      - action: utter_learn_more_about_module
+
+  - story: interactive_story_7 user ends form early
+    steps:
+      - intent: chooseModule
+      - action: module_form
+      - active_loop: module_form
+      - intent: stop
+      - action: utter_ask_to_continue
+      - intent: stop
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: utter_how_can_i_help
+
+  - story: interactive_story_8
+    steps:
+      - intent: chooseModule
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - slot_was_set:
+          - studyField: Computer Science
+      - slot_was_set:
+          - requested_slot: codingAbility
+      - slot_was_set:
+          - codingAbility: "5"
+      - slot_was_set:
+          - requested_slot: language
+      - slot_was_set:
+          - language: Java
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - action: action_repeat_values
+      - action: action_recommend_similar_keywords
+      - slot_was_set:
+          - module: Data-Driven Decision Making (Blended mode)
+      - action: utter_learn_more_about_module
+      - intent: confirm
+      - action: action_module_leader_query
+      - action: utter_would_you_like_module_description
