@@ -27,6 +27,7 @@ entities:
   - language
   - codingAbility
   - studyField
+  - keywords
   - module
   - staffEmail
 slots:
@@ -72,6 +73,12 @@ slots:
     mappings:
       - type: from_entity
         entity: module
+  keywords:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: keywords
 forms:
   module_form:
     required_slots:

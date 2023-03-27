@@ -89,6 +89,12 @@ nlu:
       - [Haskell](language)
       - [Java](language)
       - [Java](language)
+  - intent: keywordAddition
+    examples: |
+      - i'd love to learn about [motherboards](keywords)
+      - i'm interested in [Management](keywords)
+      - [classification](keywords)
+
   - intent: moduleQuery
     examples: |
       - Can you tell me more about [Computer Systems](module) ?
@@ -176,6 +182,23 @@ nlu:
       - HTML
       - Javascript
       - CSS
+  - lookup: keywords
+    examples: |
+      - motherboards
+      - processor
+      - operating
+      - Design
+      - Dialogues
+      - information
+      - Security
+      - Strategic
+      - Management
+      - big Data
+      - Software
+      - algorithms
+      - classification
+      - programming
+      - networking
   - lookup: module
     examples: |
       - Computer Systems
