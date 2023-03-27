@@ -218,7 +218,7 @@ class ActionrecommendSimilarDescription(Action):
         import os
         import csv
 
-        moduleName = tracker.get_slot("module")
+        moduleName = tracker.get_slot("module1")
         recommendedModule = recommend_module_based_on_description(moduleName)
         print(recommendedModule)
 
@@ -228,7 +228,7 @@ class ActionrecommendSimilarDescription(Action):
         return [] 
     
     
-class ActionrecommendSimilarDescription(Action):
+class ActionrecommendSimilarKeywords(Action):
 
     def name(self) -> Text:
         return "action_recommend_similar_keywords"
@@ -246,15 +246,42 @@ class ActionrecommendSimilarDescription(Action):
         field.append(tracker.get_slot("studyField"))
         keywords.append(tracker.get_slot("language"))
 
-        recommendedModule = recommend_module_based_on_metadata('userModule', field, keywords)
-        print(recommendedModule)
+        recommendedModules = recommend_module_based_on_metadata('userModule', field, keywords)
+        print(recommendedModules)
 
-        msg = f"This module best suits your requirements {recommendedModule}. \nRemember I am only a chatbot in early development. Please contact the module leader before signing up." 
-        dispatcher.utter_message(text=msg)
+        msg = f"This module best suits your requirements {recommendedModules[0]}. " 
+        
+        # add code to check keywords are in he recommended module
+        
+        cur_path = os.path.dirname(__file__)
+        file_path = os.path.join(cur_path, '..\\dataset\\modulesMovieStyle2.csv')
 
-        return [SlotSet("module", recommendedModule)] 
+        with open(file_path, newline='') as csvfile:
+        
+            reader = csv.DictReader(csvfile)
+        
+            for row in reader:
+                if (recommendedModules[0] == row['Module Name']):
+                    for x in range(len(keywords)):
+                        if (keywords[x] in row['Keywords'] or keywords[x] in row['Fields']):
+                            print("Keyword is present")
+                        else:
+                            print("Keyword is not present")
+                            msg += f"Unfortunately the module does not cover {keywords[x]}. "
+                    for x in range(len(field)):    
+                        if (field[x] in row['Fields'] or field[x] in row['Keywords']):
+                            print("field is present")
+                        else:
+                            print("field is not present")
+                            msg += f"Unfortunately the module does not cover {field[x]}. "
+
+
+        msg += "\nRemember I am only a chatbot in early development. Please contact the module leader before signing up. "
+        dispatcher.utter_message(text=msg)  
+
+        return [SlotSet("module1", recommendedModules[0]), SlotSet("module2", recommendedModules[1]), SlotSet("module3", recommendedModules[2])] 
     
-class ActionModuleSpecifications(Action):
+class ActionModuleLeaderQuery(Action):
 
     def name(self) -> Text:
         return "action_module_leader_query"
@@ -269,7 +296,7 @@ class ActionModuleSpecifications(Action):
         cur_path = os.path.dirname(__file__)
         file_path = os.path.join(cur_path, '..\\dataset\\modulesMovieStyle2.csv')
         emails_file_path = os.path.join(cur_path, '..\\dataset\\staffEmails.csv')
-        moduleName = tracker.get_slot("module")
+        moduleName = tracker.get_slot("module1")
 
         if moduleName is None:
             msg = "There was a non Type sent"
@@ -298,7 +325,7 @@ class ActionModuleSpecifications(Action):
         return [] 
     
 
-class ActionModuleSpecifications(Action):
+class ActionModuleDescription(Action):
 
     def name(self) -> Text:
         return "action_module_description"
@@ -312,7 +339,7 @@ class ActionModuleSpecifications(Action):
 
         cur_path = os.path.dirname(__file__)
         file_path = os.path.join(cur_path, '..\\dataset\\modulesMovieStyle2.csv')
-        moduleName = tracker.get_slot("module")
+        moduleName = tracker.get_slot("module1")
 
         if moduleName is None:
             msg = "There was a non Type sent"
@@ -335,3 +362,48 @@ class ActionModuleSpecifications(Action):
         dispatcher.utter_message(text=msg)
 
         return [] 
+
+
+class ActionUpdateModule1(Action):
+
+    def name(self) -> Text:
+        return "update_module1_from_module2"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        import os
+        import csv
+
+        module1 = tracker.get_slot("module1")
+        module2 = tracker.get_slot("module2")
+        print(module1)
+        print(module2)
+
+        print('this is the module name: ' + module1)
+        msg = f"Okay, does this module Sound more appealing? {module2}"
+
+
+        dispatcher.utter_message(text=msg)
+
+        return [SlotSet("module1", module2)] 
+    
+
+class ActionClearModuleSlots(Action):
+
+    def name(self) -> Text:
+        return "clear_module_slots"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        import os
+        import csv
+
+        msg = ""
+
+        dispatcher.utter_message(text=msg)
+
+        return [SlotSet("studyField", None), SlotSet("codingAbility", None), SlotSet("language", None)] 

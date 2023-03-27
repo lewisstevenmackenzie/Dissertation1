@@ -1,8 +1,7 @@
 #importing necessary libraries
 import numpy as np
 import pandas as pd
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.metrics.pairwise import euclidean_distances
+from sklearn.metrics.pairwise import cosine_similarity, euclidean_distances
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -87,9 +86,14 @@ def recommend_module_based_on_metadata(module_input, fields, keywords):
   similarity_score = list(enumerate(cosine_sim_matrix[module_index]))
   #similarity_score = list(enumerate(euclidean_dis_matrix[module_index]))
   
+  #Set Reverse to False for Euclidean Distance
   similarity_score = sorted(similarity_score, key=lambda x: x[1], reverse=True)
   # Get the scores of the 2 most similar modules.
-  similarity_score = similarity_score[1:2]
+  similarity_score = similarity_score[1:5]
   module_indices = [i[0] for i in similarity_score]
-  
-  return (modules['Module Name'].iloc[module_indices[0]])
+  recommendedmodules = []
+
+  for x in range(len(module_indices)):
+    recommendedmodules.append(modules['Module Name'].iloc[module_indices[x]])
+
+  return (recommendedmodules)
