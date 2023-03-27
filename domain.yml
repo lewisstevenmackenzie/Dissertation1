@@ -54,7 +54,19 @@ slots:
     mappings:
       - type: from_entity
         entity: staffEmail
-  module:
+  module1:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: module
+  module2:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: module
+  module3:
     type: text
     influence_conversation: true
     mappings:
@@ -150,3 +162,5 @@ actions:
   - validate_chooseModule_form
   - utter_would_you_like_module_description
   - action_module_description
+  - update_module1_from_module2
+  - clear_module_slots

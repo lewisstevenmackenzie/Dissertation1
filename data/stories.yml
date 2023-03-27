@@ -4,6 +4,7 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: chooseModule
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
 
@@ -16,18 +17,18 @@ stories:
     steps:
       - intent: moduleQuery
         entities:
-          - module: Computer Systems
+          - module1: Computer Systems
       - slot_was_set:
-          - module: Computer Systems
+          - module1: Computer Systems
       - action: action_module_specifications
 
   - story: recommend similar modules
     steps:
       - intent: recommend
         entities:
-          - module: Computer Systems
+          - module1: Computer Systems
       - slot_was_set:
-          - module: Computer Systems
+          - module1: Computer Systems
       - action: action_recommend_similar_description
 
   - story: choosing field
@@ -64,6 +65,7 @@ stories:
       - intent: greet
       - action: utter_greet
       - intent: chooseModule
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
       - slot_was_set:
@@ -88,6 +90,7 @@ stories:
   - story: interactive_story_2
     steps:
       - intent: chooseModule
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
       - slot_was_set:
@@ -169,6 +172,7 @@ stories:
   - story: interactive_story_5
     steps:
       - intent: chooseModule
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
       - slot_was_set:
@@ -198,6 +202,7 @@ stories:
   - story: interactive_story_6
     steps:
       - intent: chooseModule
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
       - slot_was_set:
@@ -224,12 +229,13 @@ stories:
       - action: action_repeat_values
       - action: action_recommend_similar_keywords
       - slot_was_set:
-          - module: Data-Driven Decision Making (Blended mode)
+          - module1: Data-Driven Decision Making (Blended mode)
       - action: utter_learn_more_about_module
 
   - story: interactive_story_7 user ends form early
     steps:
       - intent: chooseModule
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
       - intent: stop
@@ -242,6 +248,7 @@ stories:
   - story: interactive_story_8
     steps:
       - intent: chooseModule
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
       - slot_was_set:
@@ -263,7 +270,7 @@ stories:
       - action: action_repeat_values
       - action: action_recommend_similar_keywords
       - slot_was_set:
-          - module: Data-Driven Decision Making (Blended mode)
+          - module1: Data-Driven Decision Making (Blended mode)
       - action: utter_learn_more_about_module
       - intent: confirm
       - action: action_module_leader_query

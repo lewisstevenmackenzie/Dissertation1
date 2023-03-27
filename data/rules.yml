@@ -2,6 +2,7 @@ rules:
   - rule: activate module choice form
     steps:
       - intent: chooseModule
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
 
@@ -17,7 +18,7 @@ rules:
       - action: action_repeat_values
       - action: action_recommend_similar_keywords
       - slot_was_set:
-          - module: Data-Driven Decision Making (Blended mode)
+          - module1: Data-Driven Decision Making (Blended mode)
       - action: utter_learn_more_about_module
 
   - rule: Form interrupted with field Query
@@ -87,6 +88,24 @@ rules:
   - rule: User doesn't want to know more about the module
     steps:
       - action: utter_learn_more_about_module
+      - intent: deny
+      - action: update_module1_from_module2
+
+  - rule: user like option 2 for modules
+    steps:
+      - action: update_module1_from_module2
+      - intent: confirm
+      - action: utter_learn_more_about_module
+
+  - rule: User doesn't want to know more about the module and doesnt like option 2
+    steps:
+      - action: utter_learn_more_about_module
+      - intent: deny
+      - action: update_module1_from_module2
+
+  - rule: user refuses the second module
+    steps:
+      - action: update_module1_from_module2
       - intent: deny
       - action: utter_how_can_i_help
 
