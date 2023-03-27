@@ -245,6 +245,8 @@ class ActionrecommendSimilarKeywords(Action):
 
         field.append(tracker.get_slot("studyField"))
         keywords.append(tracker.get_slot("language"))
+        if (tracker.get_slot("keywords") is not None):
+            keywords.append(tracker.get_slot("keywords"))
 
         recommendedModules = recommend_module_based_on_metadata('userModule', field, keywords)
         print(recommendedModules)
@@ -262,17 +264,18 @@ class ActionrecommendSimilarKeywords(Action):
         
             for row in reader:
                 if (recommendedModules[0] == row['Module Name']):
+
                     for x in range(len(keywords)):
-                        if (keywords[x] in row['Keywords'] or keywords[x] in row['Fields']):
-                            print("Keyword is present")
+                        if (keywords[x].lower() in row['Keywords'].lower() or keywords[x].lower() in row['Fields'].lower()):
+                            print(f"{keywords[x]} is present")
                         else:
-                            print("Keyword is not present")
+                            print(f"{keywords[x]} is not present")
                             msg += f"Unfortunately the module does not cover {keywords[x]}. "
                     for x in range(len(field)):    
-                        if (field[x] in row['Fields'] or field[x] in row['Keywords']):
-                            print("field is present")
+                        if (field[x].lower() in row['Fields'].lower() or field[x].lower() in row['Keywords'].lower()):
+                            print(f"{field[x]} is present")
                         else:
-                            print("field is not present")
+                            print(f"{field[x]} is not present")
                             msg += f"Unfortunately the module does not cover {field[x]}. "
 
 
