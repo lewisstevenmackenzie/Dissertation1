@@ -103,9 +103,9 @@ stories:
           - codingAbility: "5"
       - slot_was_set:
           - requested_slot: language
-      - intent: languageSelection
+      - intent: inform
       - action: utter_default
-      - intent: languageSelection
+      - intent: inform
         entities:
           - language: Haskell
       - slot_was_set:
@@ -197,7 +197,7 @@ stories:
   - story: interactive_story_8
     steps:
       - intent: chooseModule
-
+      - action: clear_module_slots
       - action: module_form
       - active_loop: module_form
       - slot_was_set:

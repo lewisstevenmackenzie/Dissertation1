@@ -75,8 +75,6 @@ nlu:
       - [Computer Science](studyField)
       - [Computer Science](studyField)
       - [5](codingAbility)
-  - intent: languageSelection
-    examples: |
       - i want to learn [Java](language)
       - it would be fun to learn [C++](language)
       - i'm interesetd in [Haskell](language)
@@ -89,8 +87,6 @@ nlu:
       - [Haskell](language)
       - [Java](language)
       - [Java](language)
-  - intent: keywordAddition
-    examples: |
       - i'd love to learn about [motherboards](keywords)
       - i'm interested in [Management](keywords)
       - [classification](keywords)
