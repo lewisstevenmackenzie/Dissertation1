@@ -1,0 +1,333 @@
+[
+  {
+    "text": "i would like to learn about Cyber Securtiy",
+    "entities": [
+      {
+        "start": 28,
+        "end": 42,
+        "value": "Cyber Securtiy",
+        "entity": "studyField"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i'd like to learn more about informatics",
+    "entities": [
+      {
+        "start": 29,
+        "end": 40,
+        "value": "informatics",
+        "entity": "studyField"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "What does the assement look like for Design Dialogues ?",
+    "entities": [
+      {
+        "start": 37,
+        "end": 53,
+        "value": "Design Dialogues",
+        "entity": "module"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "keywords",
+        "start": 37,
+        "end": 43,
+        "value": "Design",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "keywords",
+        "start": 44,
+        "end": 53,
+        "value": "Dialogues",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "module",
+        "start": 37,
+        "end": 53,
+        "value": "Design Dialogues",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "will there be an exam for the Security Audit & Compliance module?",
+    "entities": [
+      {
+        "start": 30,
+        "end": 57,
+        "value": "Security Audit & Compliance",
+        "entity": "module"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "keywords",
+        "start": 30,
+        "end": 38,
+        "value": "Security",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "module",
+        "start": 30,
+        "end": 57,
+        "value": "Security Audit & Compliance",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "What can you tell me about Knowledge Management",
+    "entities": [
+      {
+        "start": 27,
+        "end": 47,
+        "value": "Knowledge Management",
+        "entity": "module"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "keywords",
+        "start": 37,
+        "end": 47,
+        "value": "Management",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "module",
+        "start": 27,
+        "end": 47,
+        "value": "Knowledge Management",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "can you give me any information about the visa process?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "keywords",
+        "start": 20,
+        "end": 31,
+        "value": "information",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "i'm currently living in a different country and would like some information regarding the visa application.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "keywords",
+        "start": 64,
+        "end": 75,
+        "value": "information",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "what is kevin email address",
+    "entities": [
+      {
+        "start": 8,
+        "end": 13,
+        "value": "kevin",
+        "entity": "staffEmail"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me the email address of Neil Urqhuart",
+    "entities": [
+      {
+        "start": 37,
+        "end": 50,
+        "value": "Neil Urqhuart",
+        "entity": "staffEmail"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "yanchao Yu email address?",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "yanchao Yu",
+        "entity": "staffEmail"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what modules are similar to Knowledge Management",
+    "entities": [
+      {
+        "start": 28,
+        "end": 48,
+        "value": "Knowledge Management",
+        "entity": "module"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "keywords",
+        "start": 38,
+        "end": 48,
+        "value": "Management",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "module",
+        "start": 28,
+        "end": 48,
+        "value": "Knowledge Management",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "can you recommend a module similar to Design Dialogues",
+    "entities": [
+      {
+        "start": 38,
+        "end": 54,
+        "value": "Design Dialogues",
+        "entity": "module"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "keywords",
+        "start": 38,
+        "end": 44,
+        "value": "Design",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "keywords",
+        "start": 45,
+        "end": 54,
+        "value": "Dialogues",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "module",
+        "start": 38,
+        "end": 54,
+        "value": "Design Dialogues",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "My name is Lewis Mackenzie",
+    "entities": [
+      {
+        "start": 11,
+        "end": 26,
+        "value": "Lewis Mackenzie",
+        "entity": "userName"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "yes, my name is Andrew",
+    "entities": [
+      {
+        "start": 16,
+        "end": 22,
+        "value": "Andrew",
+        "entity": "userName"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i'm called Steven",
+    "entities": [
+      {
+        "start": 11,
+        "end": 17,
+        "value": "Steven",
+        "entity": "userName"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "my name is louisa",
+    "entities": [
+      {
+        "start": 11,
+        "end": 17,
+        "value": "louisa",
+        "entity": "userName"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "my name is Bob",
+    "entities": [
+      {
+        "start": 11,
+        "end": 14,
+        "value": "Bob",
+        "entity": "userName"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "my name is Lewis",
+    "entities": [
+      {
+        "start": 11,
+        "end": 16,
+        "value": "Lewis",
+        "entity": "userName"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "My name is Lewis",
+    "entities": [
+      {
+        "start": 11,
+        "end": 16,
+        "value": "Lewis",
+        "entity": "userName"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "yes, my name is Lewis",
+    "entities": [
+      {
+        "start": 16,
+        "end": 21,
+        "value": "Lewis",
+        "entity": "userName"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

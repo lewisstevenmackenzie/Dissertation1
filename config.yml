@@ -16,9 +16,11 @@ pipeline:
     entity_recognition: true
     epochs: 100
     constrain_similarities: true
+
   # - name: RegexEntityExtractor
   #   case_sensitive: false
   #   use_lookup_tables: true
+
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
