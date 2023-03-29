@@ -107,7 +107,8 @@ rules:
     steps:
       - action: update_module1_from_module2
       - intent: deny
-      - action: utter_how_can_i_help
+      # - action: utter_how_can_i_help
+      - action: action_how_can_i_help
 
   - rule: User wants full module description
     steps:
@@ -121,7 +122,29 @@ rules:
       - action: action_module_leader_query
       - action: utter_would_you_like_module_description
       - intent: deny
-      - action: utter_how_can_i_help
+      # - action: utter_how_can_i_help
+      - action: action_how_can_i_help
+
+  - rule: activate name form
+    steps:
+      - action: utter_ask_for_username
+      - action: name_form
+      - active_loop: name_form
+
+  - rule: submit name form
+    condition:
+      - active_loop: name_form
+    steps:
+      - action: name_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # - action: utter_how_can_i_help
+      - action: action_how_can_i_help
+
+  # - rule: User gives their name
+  #   steps:
+  #     - intent: giveName
 
   # - rule: testing recommendation
   #   steps:

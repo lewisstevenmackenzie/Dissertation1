@@ -410,3 +410,25 @@ class ActionClearModuleSlots(Action):
         dispatcher.utter_message(text=msg)
 
         return [SlotSet("studyField", None), SlotSet("codingAbility", None), SlotSet("language", None)] 
+
+class ActionHowCanIHelp(Action):
+
+    def name(self) -> Text:
+        return "action_how_can_i_help"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        name = tracker.get_slot("userName")
+
+        msg = f""        
+
+        if (name == None):
+            msg += "How can i help you?"
+        else:
+            msg += f"Feel free to ask me a question, {name}"
+
+        dispatcher.utter_message(text=msg)
+
+        return [] 

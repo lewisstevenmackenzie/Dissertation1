@@ -1,0 +1,10 @@
+[
+  {
+    "text": "sure",
+    "intent": "confirm",
+    "intent_prediction": {
+      "name": "unsureOnStudyField",
+      "confidence": 0.7901069521903992
+    }
+  }
+]

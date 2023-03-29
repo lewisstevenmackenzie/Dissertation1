@@ -2,10 +2,6 @@
 import numpy as np
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity, euclidean_distances
-from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import linear_kernel
 from ast import literal_eval
 from sklearn.feature_extraction.text import CountVectorizer
 

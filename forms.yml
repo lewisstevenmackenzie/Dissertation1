@@ -23,6 +23,14 @@ slots:
         conditions:
           - active_loop: module_form
             requested_slot: language
+  userName:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        conditions:
+          - active_loop: name_form
+            requested_slot: userName
   # module:
   #   type: text
   #   influence_conversation: true
@@ -41,6 +49,10 @@ forms:
       - studyField
       - codingAbility
       - language
+
+  name_form:
+    required_slots:
+      - userName
 
   enforce_yes_or_no_form:
   answer:

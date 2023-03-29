@@ -1,208 +1,221 @@
 version: "3.1"
 nlu:
-  - intent: greet
-    examples: |
-      - Hi
-      - Hey!
-      - Hello
-      - Good day
-      - Good morning
-      - hi
-  - intent: leave
-    examples: |
-      - bye
-      - cya
-      - goodbye
-      - i'll go now
-      - thanks for everything
-  - intent: bot_challenge
-    examples: |
-      - are you a bot?
-      - are you human?
-  - intent: help
-    examples: |
-      - help
-      - I'm confused
-      - what is your purpose
-      - help me
-  - intent: fieldQuery
-    examples: |
-      - what fields can i study?
-      - can you give be a list of fields?
-      - could you give me a list of options?
-  - intent: chooseModule
-    examples: |
-      - i want to study
-      - i'm interested in picking a module
-      - i want to learn
-      - module form
-      - Hi, I’m looking for a module to study next semester.
-      - hi i would like help choosing a module
-      - hi, i want help to choose a module to study
-      - i would like help to choose a module to study next year
-      - i want help to choose a module to study
-      - i want tostudy
-      - can you help to recommend a module please?
-      - can you help me to choose a module?
-      - I WANT HELP TO CHOOSE A MODULE
-      - i want help to choose a module
-  - intent: inform
-    examples: |
-      - I'd like to study [AI](studyField)
-      - my ability is about a [4](codingAbility)
-      - my skill levis is [1](codingAbility))
-      - i want to learn about [web development](studyField)
-      - [web development](studyField)
-      - [4](codingAbility)
-      - [web development][{"entity": "studyField"}, {"entity": "studyField"}]
-      - [2](codingAbility)
-      - [5](codingAbility)
-      - I really enjoy learning about [artificial intelligence](studyField)
-      - i want to learn about [AI][{"entity": "studyField"}, {"entity": "studyField"}]
-      - [AI][{"entity": "studyField"}, {"entity": "studyField"}]
-      - [4][{"entity": "codingAbility"}, {"entity": "codingAbility"}]
-      - I want to learn about [AI](studyField)
-      - I would say that i'm a [4](codingAbility)
-      - [ai](studyField)
-      - i'd like to learn about [UX](studyField)
-      - i'd love to learn more about [web development](studyField)
-      - i think i'm very new so i would say a [1](codingAbility)
-      - [Web Development](studyField)
-      - i would like to learn about [Cyber Securtiy](studyField)
-      - i would rate my coding ability at a [4](codingAbility)
-      - i want to learn about [Computer Science](studyField)
-      - [3](codingAbility)
-      - [Computer Science](studyField)
-      - [Computer Science](studyField)
-      - [5](codingAbility)
-      - i want to learn [Java](language)
-      - it would be fun to learn [C++](language)
-      - i'm interesetd in [Haskell](language)
-      - [python](language) excites me.
-      - [Python](language)
-      - [python](language)
-      - [Haskell](language)
-      - [Java](language)
-      - [Java](language)
-      - i'd love to learn about [motherboards](keywords)
-      - i'm interested in [Management](keywords)
-      - [classification](keywords)
-
-  - intent: moduleQuery
-    examples: |
-      - Can you tell me more about [Computer Systems](module) ?
-      - What does the assement look like for [Design Dialogues](module) ?
-      - will there be an exam for the [Security Audit & Compliance](module) module?
-      - What can you tell me about [Knowledge Management](module)
-  - intent: listModules
-    examples: |
-      - can you list all the available modules for me to study?
-      - can you give me the options for which modules to take?
-      - what modules can i pick?
-      - can you give me a list of possible modules to study
-  - intent: unsureOnStudyField
-    examples: |
-      - i'm not sure which field to study
-      - i don't know which area i'm interested in.
-      - hmmm, i'm sorry i dont know what i want to study.
-      - can you list the possible fields?
-  - intent: visaQuestions
-    examples: |
-      - can you give me any information about the visa process?
-      - i'm currently living in a different country and would like some information regarding the visa application.
-      - do i need a visa?
-      - will the university help with my visa application?
-      - what are the steps to get a visa?
-      - can you help with the immigration process?
-  - intent: staffEmail
-    examples: |
-      - what is [kevin](staffEmail) email address
-      - can you tell me the email address of [Neil Urqhuart](staffEmail)
-      - [yanchao Yu](staffEmail) email address?
-  - intent: recommend
-    examples: |
-      - can you recomend a module similar to [Computer Systems](module)
-      - what modules are similar to [Knowledge Management](module)
-      - can you recommend a module similar to [Design Dialogues](module)
-  - intent: confirm
-    examples: |
-      - yes
-      - okay
-      - I do
-      - i do want to
-  - intent: deny
-    examples: |
-      - no
-      - i do not
-      - i don't
-      - please do not
-      - i don't want to
-  - intent: stop
-    examples: |
-      - stop
-      - i don't want to continue
-      - i want to leave
-      - i've had enough
-      - that will be everthing
-  - lookup: studyField
-    examples: |
-      - Web Development
-      - Artificial Intelligence
-      - AI
-      - Data Analysis
-      - UX
-      - User Experience
-      - Cyber Security
-      - Databases
-      - Computer Science
-      - Applied Informatics
-      - systems engineering
-  - lookup: codingAbility
-    examples: |
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-  - lookup: language
-    examples: |
-      - Java
-      - C
-      - C++
-      - C#
-      - Python
-      - Haskell
-      - HTML
-      - Javascript
-      - CSS
-  - lookup: keywords
-    examples: |
-      - motherboards
-      - processor
-      - operating
-      - Design
-      - Dialogues
-      - information
-      - Security
-      - Strategic
-      - Management
-      - big Data
-      - Software
-      - algorithms
-      - classification
-      - programming
-      - networking
-  - lookup: module
-    examples: |
-      - Computer Systems
-      - Design Dialogues
-      - Security Audit & Compliance
-      - Strategic Information Systems Management
-      - Data-Driven Decision Making (Blended mode)
-      - Database Systems
-      - Software Development 1
-      - Advanced Software Development
-      - Emergent Computing for Optimisation
-      - Knowledge Management
-      - Network Security
-      - Host-Based Forensics
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hello
+    - Good day
+    - Good morning
+    - hi
+- intent: leave
+  examples: |
+    - bye
+    - cya
+    - goodbye
+    - i'll go now
+    - thanks for everything
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you human?
+- intent: help
+  examples: |
+    - help
+    - I'm confused
+    - what is your purpose
+    - help me
+- intent: fieldQuery
+  examples: |
+    - what fields can i study?
+    - can you give be a list of fields?
+    - could you give me a list of options?
+- intent: chooseModule
+  examples: |
+    - i want to study
+    - i'm interested in picking a module
+    - i want to learn
+    - module form
+    - Hi, I’m looking for a module to study next semester.
+    - hi i would like help choosing a module
+    - hi, i want help to choose a module to study
+    - i would like help to choose a module to study next year
+    - i want help to choose a module to study
+    - i want tostudy
+    - can you help to recommend a module please?
+    - can you help me to choose a module?
+    - I WANT HELP TO CHOOSE A MODULE
+    - i want help to choose a module
+    - help me choose a module
+    - can you help me choose a module
+    - can you help me to choose a module
+- intent: inform
+  examples: |
+    - I'd like to study [AI](studyField)
+    - my ability is about a [4](codingAbility)
+    - my skill levis is [1](codingAbility))
+    - i want to learn about [web development](studyField)
+    - [web development](studyField)
+    - [4](codingAbility)
+    - [web development][{"entity": "studyField"}, {"entity": "studyField"}]
+    - [2](codingAbility)
+    - [5](codingAbility)
+    - I really enjoy learning about [artificial intelligence](studyField)
+    - i want to learn about [AI][{"entity": "studyField"}, {"entity": "studyField"}]
+    - [AI][{"entity": "studyField"}, {"entity": "studyField"}]
+    - [4][{"entity": "codingAbility"}, {"entity": "codingAbility"}]
+    - I want to learn about [AI](studyField)
+    - I would say that i'm a [4](codingAbility)
+    - [ai](studyField)
+    - i'd like to learn about [UX](studyField)
+    - i'd love to learn more about [web development](studyField)
+    - i think i'm very new so i would say a [1](codingAbility)
+    - [Web Development](studyField)
+    - i would like to learn about [Cyber Securtiy](studyField)
+    - i would rate my coding ability at a [4](codingAbility)
+    - i want to learn about [Computer Science](studyField)
+    - [3](codingAbility)
+    - [Computer Science](studyField)
+    - i want to learn [Java](language)
+    - it would be fun to learn [C++](language)
+    - i'm interesetd in [Haskell](language)
+    - [python](language) excites me.
+    - [Python](language)
+    - [python](language)
+    - [Haskell](language)
+    - [Java](language)
+    - i'd love to learn about [motherboards](keywords)
+    - i'm interested in [Management](keywords)
+    - [classification](keywords)
+    - i want to study [computer science](studyField)
+    - [java](language)
+    - i'd like to learn more about [informatics](studyField)
+- intent: moduleQuery
+  examples: |
+    - Can you tell me more about [Computer Systems](module) ?
+    - What does the assement look like for [Design Dialogues](module) ?
+    - will there be an exam for the [Security Audit & Compliance](module) module?
+    - What can you tell me about [Knowledge Management](module)
+- intent: listModules
+  examples: |
+    - can you list all the available modules for me to study?
+    - can you give me the options for which modules to take?
+    - what modules can i pick?
+    - can you give me a list of possible modules to study
+- intent: unsureOnStudyField
+  examples: |
+    - i'm not sure which field to study
+    - i don't know which area i'm interested in.
+    - hmmm, i'm sorry i dont know what i want to study.
+    - can you list the possible fields?
+- intent: visaQuestions
+  examples: |
+    - can you give me any information about the visa process?
+    - i'm currently living in a different country and would like some information regarding the visa application.
+    - do i need a visa?
+    - will the university help with my visa application?
+    - what are the steps to get a visa?
+    - can you help with the immigration process?
+- intent: staffEmail
+  examples: |
+    - what is [kevin](staffEmail) email address
+    - can you tell me the email address of [Neil Urqhuart](staffEmail)
+    - [yanchao Yu](staffEmail) email address?
+- intent: recommend
+  examples: |
+    - can you recomend a module similar to [Computer Systems](module)
+    - what modules are similar to [Knowledge Management](module)
+    - can you recommend a module similar to [Design Dialogues](module)
+- intent: confirm
+  examples: |
+    - yes
+    - okay
+    - I do
+    - i do want to
+    - sure
+- intent: deny
+  examples: |
+    - no
+    - i do not
+    - i don't
+    - please do not
+    - i don't want to
+- intent: stop
+  examples: |
+    - stop
+    - i don't want to continue
+    - i want to leave
+    - i've had enough
+    - that will be everthing
+- intent: giveName
+  examples: |
+    - My name is [Lewis Mackenzie](userName)
+    - yes, my name is [Andrew](userName)
+    - i'm called [Steven](userName)
+    - my name is [louisa](userName)
+    - my name is [Bob](userName)
+    - my name is [Lewis](userName)
+    - My name is [Lewis](userName)
+    - yes, my name is [Lewis](userName)
+- lookup: studyField
+  examples: |
+    - Web Development
+    - Artificial Intelligence
+    - AI
+    - Data Analysis
+    - UX
+    - User Experience
+    - Cyber Security
+    - Databases
+    - Computer Science
+    - Applied Informatics
+    - systems engineering
+- lookup: codingAbility
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+- lookup: language
+  examples: |
+    - Java
+    - C
+    - C++
+    - C#
+    - Python
+    - Haskell
+    - HTML
+    - Javascript
+    - CSS
+- lookup: keywords
+  examples: |
+    - motherboards
+    - processor
+    - operating
+    - Design
+    - Dialogues
+    - information
+    - Security
+    - Strategic
+    - Management
+    - big Data
+    - Software
+    - algorithms
+    - classification
+    - programming
+    - networking
+- lookup: module
+  examples: |
+    - Computer Systems
+    - Design Dialogues
+    - Security Audit & Compliance
+    - Strategic Information Systems Management
+    - Data-Driven Decision Making (Blended mode)
+    - Database Systems
+    - Software Development 1
+    - Advanced Software Development
+    - Emergent Computing for Optimisation
+    - Knowledge Management
+    - Network Security
+    - Host-Based Forensics

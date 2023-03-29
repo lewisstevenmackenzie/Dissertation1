@@ -3,6 +3,20 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_ask_username_permission
+      - intent: confirm
+      - action: utter_ask_for_username
+      - action: name_form
+      - active_loop: name_form
+      - slot_was_set:
+          - requested_slot: userName
+      - slot_was_set:
+          - userName: Lewis
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      #   - action: utter_how_can_i_help
+      - action: action_how_can_i_help
       - intent: chooseModule
       - action: clear_module_slots
       - action: module_form
@@ -64,6 +78,20 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_ask_username_permission
+      - intent: confirm
+      - action: utter_ask_for_username
+      - action: name_form
+      - active_loop: name_form
+      - slot_was_set:
+          - requested_slot: userName
+      - slot_was_set:
+          - userName: Lewis
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      #   - action: utter_how_can_i_help
+      - action: action_how_can_i_help
       - intent: chooseModule
       - action: clear_module_slots
       - action: module_form
@@ -192,7 +220,8 @@ stories:
       - intent: stop
       - action: action_deactivate_loop
       - active_loop: null
-      - action: utter_how_can_i_help
+      #   - action: utter_how_can_i_help
+      - action: action_how_can_i_help
 
   - story: interactive_story_8
     steps:
@@ -224,3 +253,229 @@ stories:
       - intent: confirm
       - action: action_module_leader_query
       - action: utter_would_you_like_module_description
+
+  - story: interactive_story_10
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_username_permission
+      - intent: confirm
+      - action: utter_ask_for_username
+      - action: name_form
+      - active_loop: name_form
+      - slot_was_set:
+          - requested_slot: userName
+      - slot_was_set:
+          - userName: Claire
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      #   - action: utter_how_can_i_help
+      - action: action_how_can_i_help
+  - story: interactive_story_11
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_username_permission
+      - intent: deny
+      #   - action: utter_how_can_i_help
+      - action: action_how_can_i_help
+  - story: interactive_story_12
+    steps:
+      - intent: chooseModule
+      - action: clear_module_slots
+      - slot_was_set:
+          - studyField: null
+      - slot_was_set:
+          - codingAbility: null
+      - slot_was_set:
+          - language: null
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - intent: inform
+        entities:
+          - studyField: Computer Science
+      - action: utter_default
+
+  - story: interactive_story_13
+    steps:
+      - intent: chooseModule
+      - action: clear_module_slots
+      - slot_was_set:
+          - studyField: null
+      - slot_was_set:
+          - codingAbility: null
+      - slot_was_set:
+          - language: null
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - slot_was_set:
+          - studyField: computer science
+      - slot_was_set:
+          - requested_slot: codingAbility
+      - slot_was_set:
+          - codingAbility: "4"
+      - slot_was_set:
+          - requested_slot: language
+      - slot_was_set:
+          - language: java
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - action: action_repeat_values
+      - action: action_recommend_similar_keywords
+      - slot_was_set:
+          - module1: Data-Driven Decision Making (Blended mode)
+      - slot_was_set:
+          - module2: Database Systems
+      - slot_was_set:
+          - module3: Software Development 1
+      - action: utter_learn_more_about_module
+      - intent: confirm
+      - action: action_module_leader_query
+      - action: utter_would_you_like_module_description
+      - intent: confirm
+      - action: action_module_description
+
+  - story: interactive_story_14
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_username_permission
+      - intent: confirm
+      - action: utter_ask_for_username
+      - action: name_form
+      - active_loop: name_form
+      - slot_was_set:
+          - requested_slot: userName
+      - slot_was_set:
+          - userName: Lewis
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      #   - action: utter_how_can_i_help
+      - action: action_how_can_i_help
+
+  - story: interactive_story_15
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_username_permission
+      - intent: confirm
+      - action: utter_ask_for_username
+      - action: name_form
+      - active_loop: name_form
+      - slot_was_set:
+          - requested_slot: userName
+      - slot_was_set:
+          - userName: Lewis
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      #   - action: utter_how_can_i_help
+      - action: action_how_can_i_help
+      - intent: chooseModule
+      - action: clear_module_slots
+      - slot_was_set:
+          - studyField: null
+      - slot_was_set:
+          - codingAbility: null
+      - slot_was_set:
+          - language: null
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+
+  - story: interactive_story_16
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_username_permission
+      - intent: confirm
+      - action: utter_ask_for_username
+      - action: name_form
+      - active_loop: name_form
+      - slot_was_set:
+          - requested_slot: userName
+      - slot_was_set:
+          - userName: Lewis
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      #   - action: utter_how_can_i_help
+      - action: action_how_can_i_help
+      - intent: chooseModule
+      - action: clear_module_slots
+      - slot_was_set:
+          - studyField: null
+      - slot_was_set:
+          - codingAbility: null
+      - slot_was_set:
+          - language: null
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - slot_was_set:
+          - studyField: computer science
+      - slot_was_set:
+          - requested_slot: codingAbility
+      - slot_was_set:
+          - codingAbility: "4"
+      - slot_was_set:
+          - requested_slot: language
+      - slot_was_set:
+          - language: java
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - action: action_repeat_values
+      - action: action_recommend_similar_keywords
+      - slot_was_set:
+          - module1: Data-Driven Decision Making (Blended mode)
+      - slot_was_set:
+          - module2: Database Systems
+      - slot_was_set:
+          - module3: Software Development 1
+      - action: utter_learn_more_about_module
+      - intent: confirm
+      - action: action_module_leader_query
+      - action: utter_would_you_like_module_description
+      - intent: confirm
+      - action: action_module_description
+
+  - story: interactive_story_1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_ask_username_permission
+      - intent: giveName
+        entities:
+          - userName: Lewis
+      - slot_was_set:
+          - userName: Lewis
+      - action: action_how_can_i_help
+      - intent: chooseModule
+      - action: clear_module_slots
+      - slot_was_set:
+          - studyField: null
+      - slot_was_set:
+          - codingAbility: null
+      - slot_was_set:
+          - language: null
+      - action: module_form
+      - active_loop: module_form
+      - slot_was_set:
+          - requested_slot: studyField
+      - intent: inform
+        entities:
+          - studyField: informatics
+      - slot_was_set:
+          - studyField: informatics
