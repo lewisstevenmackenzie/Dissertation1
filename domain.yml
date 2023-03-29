@@ -1,188 +1,188 @@
-version: '3.1'
+version: "3.1"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- bot_challenge
-- chooseModule
-- confirm
-- deny
-- field
-- fieldQuery
-- giveName
-- greet
-- help
-- inform
-- languageSelection
-- leave
-- listModules
-- moduleQuery
-- recommend
-- request_chooseModule_form
-- staffEmail
-- stop
-- subscribe
-- unsureOnStudyField
-- visaQuestions
+  - bot_challenge
+  - chooseModule
+  - confirm
+  - deny
+  - field
+  - fieldQuery
+  - giveName
+  - greet
+  - help
+  - inform
+  - languageSelection
+  - leave
+  - listModules
+  - moduleQuery
+  - recommend
+  - request_chooseModule_form
+  - staffEmail
+  - stop
+  - subscribe
+  - unsureOnStudyField
+  - visaQuestions
 entities:
-- userName
-- studyField
-- codingAbility
-- language
-- keywords
-- module
-- staffEmail
+  - userName
+  - studyField
+  - codingAbility
+  - language
+  - keywords
+  - module
+  - staffEmail
 slots:
   studyField:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: studyField
+      - type: from_entity
+        entity: studyField
   codingAbility:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: codingAbility
+      - type: from_entity
+        entity: codingAbility
   language:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: language
+      - type: from_entity
+        entity: language
   staffEmail:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: staffEmail
+      - type: from_entity
+        entity: staffEmail
   module1:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: module
+      - type: from_entity
+        entity: module
   module2:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: module
+      - type: from_entity
+        entity: module
   module3:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: module
+      - type: from_entity
+        entity: module
   keywords:
     type: text
     influence_conversation: false
     mappings:
-    - type: from_entity
-      entity: keywords
+      - type: from_entity
+        entity: keywords
   userName:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: userName
+      - type: from_entity
+        entity: userName
 forms:
   module_form:
     required_slots:
-    - studyField
-    - codingAbility
-    - language
+      - studyField
+      - codingAbility
+      - language
   name_form:
     required_slots:
-    - userName
+      - userName
 responses:
   utter_greet:
-  - text: Hello!
-  - text: Hi!
+    - text: Hello!
+    - text: Hi!
   utter_ask_email:
-  - text: |
-      What is your email address?
+    - text: |
+        What is your email address?
   utter_subscribed:
-  - text: Check your inbox at {email} in order to finish subscribing to the newsletter!
-  - text: You're all set! Check your inbox at {email} to confirm your subscription.
+    - text: Check your inbox at {email} in order to finish subscribing to the newsletter!
+    - text: You're all set! Check your inbox at {email} to confirm your subscription.
   utter_i_am_a_bot:
-  - text: I am a bot powered by Rasa.
+    - text: I am a bot powered by Rasa.
   utter_ask_studyField:
-  - text: Which field of study are you interested in?
-  - text: Okay, I’m here to help you. Do you have any specific field that interest you?
+    - text: Which field of study are you interested in?
+    - text: Okay, I’m here to help you. Do you have any specific field that interest you?
   utter_ask_codingAbility:
-  - text: How would you rate your level of coding ability on a scale of 1 to 5? 1 meaning that you are a complete novice and 5 being an advanced programmer.
-  - text: Okay, I will suggest {studyField} modules. How would you rate your level of coding ability on a scale of 1 to 5? 1 meaning that you are a complete novice and 5 being an advanced programmer.
+    - text: How would you rate your level of coding ability on a scale of 1 to 5? 1 meaning that you are a complete novice and 5 being an advanced programmer.
+    - text: Okay, I will suggest {studyField} modules. How would you rate your level of coding ability on a scale of 1 to 5? 1 meaning that you are a complete novice and 5 being an advanced programmer.
   utter_goodbye:
-  - text: I hope i was able to help you. Enjoy the rest of your day.
+    - text: I hope i was able to help you. Enjoy the rest of your day.
   utter_submit:
-  - text: okay, thanks!
+    - text: okay, thanks!
   utter_slot_values:
-  - text: Okay, so you would like to study {studyField} and your coding ability is estimated at {codingAbility}. you would also like to learn {language}
+    - text: Okay, so you would like to study {studyField} and your coding ability is estimated at {codingAbility}. you would also like to learn {language}
   utter_invalid_input:
-  - text: Your input was invalid. Please try again.
+    - text: Your input was invalid. Please try again.
   utter_help:
-  - text: I am here to help you choose a module to study.
+    - text: I am here to help you, you can ask me to help you choose a module to study or a professors email. Maybe I can recommend a module similar to one you have already done.
   utter_field_list:
-  - text: There are a number of fields you may study. These range from Web Development, Artificial Intelligence and Data Analysis
+    - text: There are a number of fields you may study. These range from Web Development, Artificial Intelligence and Data Analysis
   utter_ask_language:
-  - text: Do you have a preffered coding language you would like to learn?
+    - text: Do you have a preffered coding language you would like to learn?
   utter_out_of_scope:
-  - text: Sorry, I can't handle that request.
+    - text: Sorry, I can't handle that request.
   utter_please_rephrase:
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+    - text: I'm sorry, I didn't quite understand that. Could you rephrase?
   utter_default:
-  - text: Sorry I didn't get that. Can you rephrase?
+    - text: Sorry I didn't get that. Can you rephrase?
   utter_module_specifications:
-  - text: This is what the module requires! MAKE THIS AN ACTION
+    - text: This is what the module requires! MAKE THIS AN ACTION
   utter_learn_more_about_module:
-  - text: Would you like to learn more about the module?
+    - text: Would you like to learn more about the module?
   utter_ask_to_continue:
-  - text: Do you want to continue?
+    - text: Do you want to continue?
   utter_how_can_i_help:
-  - text: How can i help you?
-  - text: Is there anything I can assist you with?
-  - text: Feel free to ask me a question, {userName}.
+    - text: How can i help you?
+    - text: Is there anything I can assist you with?
+    - text: Feel free to ask me a question, {userName}.
   utter_would_you_like_module_description:
-  - text: Would you like the full module description?
+    - text: Would you like the full module description?
   utter_ask_username_permission:
-  - text: Would it be okay for me to ask your name to make this experience more natural?
+    - text: Would it be okay for me to ask your name to make this experience more natural?
   utter_ask_for_username:
-  - text: Perfect, what is your name?
+    - text: Perfect, what is your name?
 actions:
-- '...'
-- action_how_can_i_help
-- action_list_modules
-- action_list_study_fields
-- action_module_description
-- action_module_leader_query
-- action_module_specifications
-- action_recommend_similar_description
-- action_recommend_similar_keywords
-- action_repeat_values
-- action_send_staff_email
-- clear_module_slots
-- update_module1_from_module2
-- utter_ask_codingAbility
-- utter_ask_for_username
-- utter_ask_language
-- utter_ask_studyField
-- utter_ask_to_continue
-- utter_ask_username_permission
-- utter_default
-- utter_field_list
-- utter_goodbye
-- utter_greet
-- utter_help
-- utter_how_can_i_help
-- utter_i_am_a_bot
-- utter_invalid_input
-- utter_learn_more_about_module
-- utter_module_specifications
-- utter_out_of_scope
-- utter_please_rephrase
-- utter_slot_values
-- utter_submit
-- utter_would_you_like_module_description
-- validate_chooseModule_form
+  - "..."
+  - action_how_can_i_help
+  - action_list_modules
+  - action_list_study_fields
+  - action_module_description
+  - action_module_leader_query
+  - action_module_specifications
+  - action_recommend_similar_description
+  - action_recommend_similar_keywords
+  - action_repeat_values
+  - action_send_staff_email
+  - clear_module_slots
+  - update_module1_from_module2
+  - utter_ask_codingAbility
+  - utter_ask_for_username
+  - utter_ask_language
+  - utter_ask_studyField
+  - utter_ask_to_continue
+  - utter_ask_username_permission
+  - utter_default
+  - utter_field_list
+  - utter_goodbye
+  - utter_greet
+  - utter_help
+  - utter_how_can_i_help
+  - utter_i_am_a_bot
+  - utter_invalid_input
+  - utter_learn_more_about_module
+  - utter_module_specifications
+  - utter_out_of_scope
+  - utter_please_rephrase
+  - utter_slot_values
+  - utter_submit
+  - utter_would_you_like_module_description
+  - validate_chooseModule_form

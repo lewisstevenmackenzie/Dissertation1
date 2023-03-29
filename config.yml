@@ -1,8 +1,10 @@
 language: en
 pipeline:
-  - name: WhitespaceTokenizer
-  #- name: SpacyTokenizer
-  # - name: SpacyFeaturizer
+  #- name: WhitespaceTokenizer
+  - name: SpacyNLP
+    model: "en_core_web_sm"
+  - name: SpacyTokenizer
+  - name: SpacyFeaturizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
