@@ -157,7 +157,17 @@ nlu:
       - my name is [louisa](userName)
       - my name is [Bob](userName)
       - my name is [Lewis](userName)
-      - My name is [Lewis](userName)
+      - My name is [Harry](userName)
+      - My name is [Ewan](userName)
+      - My name is [Robbie](userName)
+      - My name is [Roan](userName)
+      - My name is [Albert](userName)
+      - My name is [Lauren](userName)
+      - My name is [Sarah](userName)
+      - My name is [Holly](userName)
+      - My name is [Cassandra](userName)
+      - My name is [Jodie](userName)
+      - My name is [Tiegan](userName)
       - yes, my name is [Lewis](userName)
   - lookup: studyField
     examples: |

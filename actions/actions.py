@@ -218,11 +218,29 @@ class ActionrecommendSimilarDescription(Action):
         import os
         import csv
 
+        flag = 0
         moduleName = tracker.get_slot("module1")
-        recommendedModule = recommend_module_based_on_description(moduleName)
-        print(recommendedModule)
 
-        msg = f"You made it to the recommender, This the module that is being recommended {recommendedModule}" 
+        cur_path = os.path.dirname(__file__)
+        file_path = os.path.join(cur_path, '..\\dataset\\modulesMovieStyle2.csv')
+
+        if (moduleName is None):
+            msg = "You have not selected a module to compare with."
+
+        else:
+            with open(file_path, newline='') as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    if (moduleName.lower() == row['Module Name'].lower()):
+                        flag = 1
+
+            if (flag == 0):
+                print("You have asked to compare a module that is not in our database. You can ask for a list of available modules.")  
+            else:
+                recommendedModule = recommend_module_based_on_description(moduleName.lower())
+                print(recommendedModule)
+
+                msg = f"You made it to the recommender, This the module that is being recommended {recommendedModule}" 
         dispatcher.utter_message(text=msg)
 
         return [] 

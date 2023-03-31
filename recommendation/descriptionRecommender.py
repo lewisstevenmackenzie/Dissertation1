@@ -9,6 +9,7 @@ from sklearn.metrics.pairwise import linear_kernel
 
 #putting module data on 'modules' dataframe
 modules = pd.read_csv('dataset\modulesMovieStyle2.csv')
+modules['Module Name'] = modules['Module Name'].str.lower()
 
 tfidf = TfidfVectorizer(stop_words='english')
 modules['Description'] = modules['Description'].fillna('')
