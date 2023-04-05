@@ -38,7 +38,7 @@ nlu:
       - i'm interested in picking a module
       - i want to learn
       - module form
-      - Hi, I’m looking for a module to study next semester.
+      - Hi, I'm looking for a module to study next semester.
       - hi i would like help choosing a module
       - hi, i want help to choose a module to study
       - i would like help to choose a module to study next year
@@ -128,6 +128,7 @@ nlu:
       - can you recomend a module similar to [Computer Systems](module)
       - what modules are similar to [Knowledge Management](module)
       - can you recommend a module similar to [Design Dialogues](module)
+      - can you recommend a module similar to [HCI](module1)
   - intent: confirm
     examples: |
       - yes
